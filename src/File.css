@@ -41,8 +41,7 @@ p {
   padding: 8px;
   min-width: 250px;
 }
-.menu-content {
-}
+
 .menu-header {
   display: flex;
   justify-content: space-around;
@@ -103,6 +102,7 @@ p {
 }
 .total-price {
   color: black;
+  
 }
 .total-price-container {
   display: flex;
@@ -112,16 +112,19 @@ p {
   font-size: 12px;
   margin-top: 10px;
 }
-
+.charge-btn-parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .charge-btn {
   position: absolute;
   background-color: #ff004f;
-  margin-left: 30px;
-  margin-bottom: 35px;
-  padding: 10px 14px;
   border-radius: 8px;
   color: white;
   bottom: 0;
+  margin: 25px;
+  padding: 10px 65px;
 }
 
 .order-icon {
@@ -132,22 +135,33 @@ p {
 /* End OrderMenu */
 /* Start Pizza */
 .pizza-container {
-  padding: 15px 28px;
+
+  padding: 15px 18px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-  row-gap: 8px;
-  column-gap: 10px;
-  background-color: rgba(221, 221, 221, 0.26);
+  grid-template-columns: repeat(auto-fit, minmax(125px, auto));
+  row-gap: 12px;
+  column-gap: 15px;
   justify-items: center;
+}
+.choose-sort-parent{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+margin: 5px 20px;
+}
+.choose-order{
+  font-weight: 500;
 }
 
 .grow {
   flex-grow: 1;
+  background-color: rgba(221, 221, 221, 0.26);
 }
 
 .each {
   background-color: white;
-  width: 155px;
+  width: 130px;
   border-radius: 30px;
   padding: 10px;
   min-height: 155px;
@@ -166,13 +180,14 @@ p {
 /* Start Modal */
 .modal-container {
   background-color: rgba(238, 238, 238, 0.616);
-  width: 70%;
+  width: 65%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  /* top: 0; */
+  top: 0;
+  /* left: 0; */
   z-index: 1000;
 }
 .one {
@@ -214,7 +229,7 @@ p {
 }
 .btn {
   display: block;
-  margin: 30px 0;
+  margin: 10px 0;
   width: 100%;
   padding: 10px;
   background-color: rgb(44, 44, 129);
@@ -244,6 +259,15 @@ p {
   font-size: 20px;
   /* text-align: center; */
   padding: 10px;
+}
+.add-product{
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(44, 44, 129);
+    color: white;
+    font-size: 17px;
 }
 
 /* End Modal */
@@ -289,7 +313,7 @@ p {
   text-align: center;
   font-size: 22px;
   margin: 3px auto;
-  border-spacing: 1px;
+  border-spacing: 2px;
 }
 .table-head {
   font-weight: bold;
@@ -298,12 +322,14 @@ p {
 }
 .table-body {
   background-color: #eeeeee;
+  
 }
 .sales-caption {
   padding: 5px;
   /* color: #ff004f; */
   font-weight: bold;
 }
+
 .no-bills {
   color: #777;
   display: flex;
@@ -317,4 +343,290 @@ p {
   padding: 20px;
   text-align: center;
 }
+tr:nth-child(even){
+  background-color: #ddd;
+  
+}
+
+.table-head{
+  background-color: #404040;
+}
+tr td{
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.bill-price,
+.bill-quantity,
+.bill-total,
+.bill-name{
+  border: 2px solid #ddd;
+  padding: 3px;
+  margin: 8px;
+  border: 1px solid #404040;
+}
+
+
 /* End Sales */
+/* Start Category */
+
+.categories-parent{
+  display: flex;
+  justify-content: space-around;
+  /* margin: 5px; */
+  padding: 10px;
+ 
+}
+.each-category{
+  margin: 6px;
+  padding:6px;
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
+  background-color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.each-category:hover{
+  background-color: gold;
+}
+.category-icon{
+  border: 1px solid #ddd;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 8px;
+  
+}
+.each-category:hover .category-icon{
+  background-color: white;
+}
+/* .category-name{
+  padding: 0 4px;
+  margin: 2px;
+} */
+.menu-category-heading{
+  font-weight: 500;
+}
+.menu-category-parent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 25px;
+}
+
+/* End Category */
+/* Start Statistics */
+.statistics-parent{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.total-earnings-parent{
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* align-items: center; */
+  padding: 3px;
+  margin: 10px;
+}
+.total-earnings{
+  padding: 4px;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 8px;
+  width: 30%;
+  margin: 6px;
+
+}
+.stats-container{
+   display: flex; 
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+}
+.best-products-holder{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.top-products-parent{
+  /* border: 1px solid #404040; */
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+.line-chart{
+  width: 45%;
+}
+.pie-chart{
+  width: 30%;
+  margin: 20px;
+}
+.best-quantity-img{
+  width: 60px;
+  border-radius: 30px;
+  border-right: 1px solid #777;
+  margin: 3px;
+}
+.best-total-img{
+  width: 60px;
+  border-radius: 30px;
+  border-right: 1px solid #777;
+  margin: 3px;
+}
+.best-total-parent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 10px;
+  background-color: #404040;
+}
+.best-quantity-parent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 10px;
+  background-color: #404040;
+  
+}
+.best-total-quantity-name{
+  margin: 0 5px;
+  padding: 15px;
+  color: white;
+  font-weight: 500;
+
+}
+.most-profitable-products{
+  margin: 0 5px;
+  background-color: #ff004f;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 9px;
+  
+}
+.best-popular-product{
+  background-color: #ff004f;
+  color: white;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 9px;
+  
+}
+.best-quantity-container{
+  padding: 10px;
+  width: 50%;
+}
+.best-total-container{
+   padding: 10px;
+   width: 50%;
+}
+.sold-units{
+  padding: 7px;
+  /* border-left: 1px solid rgba(0, 0, 0, 0.39); */
+  color:white;
+  
+  
+}
+.total-profit{
+  /* border-left: 1px solid rgba(0, 0, 0, 0.39); */
+  padding: 7px;
+  color: white;
+}
+
+/* End Statistics */
+/* Start Media query */
+@media only screen and (max-width: 768px) {
+  
+.best-products-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.best-quantity-container{
+  width: 100%;
+}
+.best-total-container{
+  width: 100%;
+}
+.stats-container{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+ .pie-chart{
+  width: 40%;
+} 
+.line-chart{
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+} 
+
+.statistics-parent{
+  width: 100%;
+}
+.total-earnings{
+  width: 30%;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.nav-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.categories-parent{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+.menu-container{
+  min-height: 200px
+}
+.modal-container{
+  width: 100%;
+}
+.sales-table{
+  font-size: 12px;
+}
+}
+@media only screen and (max-width: 500px){
+  .modal-container{
+    width: 95%;
+  }
+  .select{
+    width: 200px;
+  }
+  .select-number{
+    width: 200px;
+    margin-right: 20px;
+  }
+  .charge-btn-parent{
+    margin-top: 60px;
+  }
+  .charge-btn{
+    margin: 0;
+  }
+  .total-earnings{
+    width: 22%;
+  }
+  .table-head th{
+    padding: 1px;
+  }
+}
+
+/* End Media query */

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Pizza = (props) => {
-  return (
-    <div className="pizza-parent">
+  return (    
+   <div className="pizza-parent">
       <div className="each">
         <div className="img-container">
           <img
@@ -25,6 +25,7 @@ const Pizza = (props) => {
         </div>
       </div>
     </div>
+  
   );
 };
 

@@ -19,7 +19,6 @@ const Modal = (props) => {
                   .size
                   .map(e => {
                     return (
-
                       <option value={e.price}>Size: {e.name}
                         - Price: {e.price}$
                       </option>
@@ -27,7 +26,7 @@ const Modal = (props) => {
                     )
                   })}</select>
               <select className='select-number' onChange={props.handleChange}>
-                <option value=''>How Many</option>
+                
                 <option value='1'>1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -37,11 +36,19 @@ const Modal = (props) => {
                 </span>
               </div>
             </div>
-            <button className='btn' onClick={props.saveInLocal}>
-              Save
-            </button>
+            <button
+              className='add-product'
+              onClick={() => {
+              props.setBillProducts(prev => [
+                ...prev, {
+                  product_id: props.selectedPizza.id,
+                  quantity: Number(props.selectedQuantity),
+                  price: Number(props.selectedPrice),
+                  total: props.selectedQuantity * props.selectedPrice
+                }
+              ]); props.setShowBill(prev => !prev)
+            }}>ِAdd</button>
           </div>
-
         </div>
       </div>
     </div>
