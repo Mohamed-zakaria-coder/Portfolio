@@ -14,7 +14,7 @@ const Statistics = () => {
     return new Date(year, month, 1);
   }
   const productsQantityTotal = Data.map(product => {
-    return {id: product.id, quantity: 0, total: 0, productName: product.name, img: product.Image ,}
+    return {id: product.id, quantity: 0, total: 0, productName: product.name, img: product.Image , categoryId: product.category_id}
   })
   const billDate = bills.map(bill => { 
     return {
@@ -56,14 +56,82 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
     .reduce((prev, curr) => {
       return (Number(prev) + Number(curr))
     })
-  // const arrForLineChart = bills.filter(bill => bill.date >=
-  // DateOfTheDayArr.map(e => e.date).toISOString())
   
-  // const state = {   labels: Data.map(bill => bill.name),   datasets: [     {
-  // label: 'Total Earnings',       backgroundColor: [         '#B21F00',
-  // '#C9DE00', '#2FDE00', '#00A6B4', '#6800B4'       ], hoverBackgroundColor: [
-  // '#501800', '#4B5000', '#175000', '#003350', '#35014F'       ], data:
-  // bills.map(bill => bill.products.map(bill => bill.total))     }]}
+    bills.map(bill => bill.products.map(sale => {
+      const theProduct = (productsQantityTotal
+      .filter(product => product.id === sale.product_id)[0])
+      theProduct.quantity += sale.quantity
+      theProduct.total += sale.total
+    }))
+    
+    const sortQuantity = (productsQantityTotal
+    .sort((a, b) => a.quantity > b.quantity
+    ? 1
+      : -1))
+    const bestProductsQuantity = sortQuantity.map(product => {
+      return(
+        {
+          bestQuantity: product.quantity,
+          bestQuantityName: product.productName,
+          bestQuantityImg: product.img
+        }
+      )
+    }) 
+    
+    const bestQuantityName = bestProductsQuantity.map(product => product.bestQuantityName)
+    const bestQuantityImg = bestProductsQuantity.map(product => product.bestQuantityImg)
+    const quantity = bestProductsQuantity.map(product => product.bestQuantity)
+    const sortTotal = (productsQantityTotal.sort((a, b) => a.total > b.total
+      ? 1
+      : -1))
+    
+    const bestProductsTotal = sortTotal.map(product => {
+      return(
+        {
+          bestTtoal: product.total,
+          productName: product.productName,
+          img: product.img
+        }
+      )
+    })
+    const total = bestProductsTotal.map(product => product.bestTtoal)  
+    const bestTotalName = bestProductsTotal.map(product => product.productName)
+    const bestTotalImg = bestProductsTotal.map(product => product.img)
+  
+    const QuantityIteration = (i) => {
+      
+            return (  <div className='best-quantity-parent'>
+            <img
+              src={bestQuantityImg[sortQuantity.length - i]}
+              className="best-quantity-img"/>
+            <div className='best-total-quantity-name'>{bestQuantityName[sortQuantity.length - i]}</div>
+            <div className='sold-units'>
+              <h3>Sold Units</h3>
+              <h2 className='top-total-quantity-products'>{quantity[quantity.length - i]}</h2>
+            </div>
+          </div> )
+  
+      // for(var i = 1 ; i <= 5; i++){   
+        // return ( <h2 className='top-total-quantity-products'>{quantity[quantity.length - i]}</h2> )
+      //   }  
+      
+    }
+    const totalIteration = (i) => {
+      
+            return ( <div className='best-total-parent'>
+            <img src={bestTotalImg[sortTotal.length - i]} className="best-total-img"/>
+            <div className='best-total-quantity-name'>{bestTotalName[sortTotal.length - i]}</div>
+            <div className='total-profit'>
+              <h3>Total Profit</h3>
+              <h2 className='top-total-quantity-products'>{total[total.length - i]}</h2>
+            </div>
+          </div> )
+  
+      // for(var i = 1 ; i <= 5; i++){   
+        // return ( <h2 className='top-total-quantity-products'>{quantity[quantity.length - i]}</h2> )
+      //   }  
+      
+    }
   const state1 = {
     labels: parseInbillDateEachDay.map(date => date.date),
     datasets: [
@@ -77,33 +145,30 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
       }
     ]
   }
-  const billQunatity = Data.map(bill  => {
-    return(
-    {
-      id: bill.id,
-      quantity: [],
-      categoryId : bill.category_id,
-      name: ''
+ 
+  
+  
+  const categoriesFilter = categories.map(category => {
+    return {
+      quantity: 0,
+      categoryId: category.id,
+      categoryName: category.name
     }
-    )
   })
-  
-  
-  bills.map( bill => bill.products.map(product => {
-    const categoryQuantity = billQunatity.filter(billQ => billQ.id === product.product_id)[0]
-    categoryQuantity.quantity.push(product.quantity)
-    const categoryId = categories.filter(category => category.id === categoryQuantity.categoryId)
-    categories.map( categ => {
-      const test = billQunatity.filter(billQ => billQ.categoryId === categ.id)
-        })
+  sortQuantity.map(product => {
+    const theQuantityProduct = categoriesFilter.filter(category => category.categoryId === product.categoryId)[0]
+    // console.log(categoriesFilter.filter(category => category.id))
+    theQuantityProduct.quantity += product.quantity
+    console.log(categoriesFilter)
 
-  }))
+  })
+
   const data = {
-    // labels: ,
+    labels: categoriesFilter.map(category => category.categoryName),
     datasets: [ 
       {
         label: '# of Votes',
-        data: billQunatity.map(e => e.quantity),
+        data: categoriesFilter.map(category => category.quantity),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -124,56 +189,6 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
       }
     ]
   };
-  const quantityTest =  categories.map(category => {
-    return (
-      {
-        id : category.id,
-        name: category.name,
-        quantity: 0
-      }
-    )
-  })
-  const dataQ = Data.map( bill => {
-    return (
-      {
-      idQ : bill.id,
-      idC : bill.category_id
-      }
-    )
-  })
-  bills.map( bill => bill.products.map( product => {
-  const test =  billQunatity.map( e => e.quantity > 1 && quantityTest.filter(a => a.id === e.categoryId )) 
-    
-  }))
-
-  
-  
-  
-  bills.map(bill => bill.products.map(sale => {
-    const theProduct = (productsQantityTotal.filter(product => product.id === sale.product_id)[0])
-    theProduct.quantity += sale.quantity
-    theProduct.total += sale.total
-  }))
-  
-  const sortQuantity = (productsQantityTotal.sort((a, b) => a.quantity > b.quantity
-  ? 1
-    : -1))
-  const bestQuantityName = sortQuantity.map(product => product.productName)
-  const bestQuantityImg = sortQuantity.map(product => product.img)
-  const everyQuantity = sortQuantity.map(qunatity => {
-    return qunatity.quantity
-  })
-  const bestQuantity = everyQuantity[everyQuantity.length - 1]
-  const sortTotal = (productsQantityTotal.sort((a, b) => a.total > b.total
-    ? 1
-    : -1))
-  const everyTotal = sortTotal.map(product => {
-    return product.total
-  })
-  const bestTotal = everyTotal[everyTotal.length - 1]
-  const bestTotalName = sortTotal.map(product => product.productName)
-  const bestTotalImg = sortTotal.map(product => product.img)
-
   
   return (
     <div className='statistics-parent'>
@@ -218,101 +233,21 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
             <div>
               <h3 className='best-popular-product'>Most Popular Products</h3>
             </div>
-            <div className='best-quantity-parent'>
-              <img
-                src={bestQuantityImg[sortQuantity.length - 1]}
-                className="best-quantity-img"/>
-              <div className='best-total-quantity-name'>{bestQuantityName[sortQuantity.length - 1]}</div>
-              <div className='sold-units'>
-                <h3>Sold Units</h3>
-                <h2 className='top-total-quantity-products'>{bestQuantity}</h2>
-              </div>
-            </div>
-            <div className='best-quantity-parent'>
-              <img
-                src={bestQuantityImg[sortQuantity.length - 2]}
-                className="best-quantity-img"/>
-              <div className='best-total-quantity-name'>{bestQuantityName[sortQuantity.length - 2]}</div>
-              <div className='sold-units'>
-                <h3>Sold Units</h3>
-                <h2 className='top-total-quantity-products'>{everyQuantity[everyQuantity.length - 2]}</h2>
-              </div>
-            </div>
-            <div className='best-quantity-parent'>
-              <img
-                src={bestQuantityImg[sortQuantity.length - 3]}
-                className="best-quantity-img"/>
-              <div className='best-total-quantity-name'>{bestQuantityName[sortQuantity.length - 3]}</div>
-              <div className='sold-units'>
-                <h3>Sold Units</h3>
-                <h2 className='top-total-quantity-products'>{everyQuantity[everyQuantity.length - 3]}</h2>
-              </div>
-            </div>
-            <div className='best-quantity-parent'>
-              <img
-                src={bestQuantityImg[sortQuantity.length - 4]}
-                className="best-quantity-img"/>
-              <div className='best-total-quantity-name'>{bestQuantityName[sortQuantity.length - 4]}</div>
-              <div className='sold-units'>
-                <h3>Sold Units</h3>
-                <h2 className='top-total-quantity-products'>{everyQuantity[everyQuantity.length - 4]}</h2>
-              </div>
-            </div>
-            <div className='best-quantity-parent'>
-              <img
-                src={bestQuantityImg[sortQuantity.length - 5]}
-                className="best-quantity-img"/>
-              <div className='best-total-quantity-name'>{bestQuantityName[sortQuantity.length - 5]}</div>
-              <div className='sold-units'>
-                <h3>Sold Units</h3>
-                <h2 className='top-total-quantity-products'>{everyQuantity[everyQuantity.length - 5]}</h2>
-              </div>
-            </div>
+            {QuantityIteration(1)}
+            {QuantityIteration(2)}
+            {QuantityIteration(3)}
+            {QuantityIteration(4)}
+            {QuantityIteration(5)}
           </div>
           <div className='best-total-container'>
             <div className='haedings-parent'>
               <h3 className='most-profitable-products'>Most profitable products</h3>
             </div>
-            <div className='best-total-parent'>
-              <img src={bestTotalImg[sortTotal.length - 1]} className="best-total-img"/>
-              <div className='best-total-quantity-name'>{bestTotalName[sortTotal.length - 1]}</div>
-              <div className='total-profit'>
-                <h3>Total Profit</h3>
-                <h2 className='top-total-quantity-products'>{bestTotal}</h2>
-              </div>
-            </div>
-            <div className='best-total-parent'>
-              <img src={bestTotalImg[sortTotal.length - 2]} className="best-total-img"/>
-              <div className='best-total-quantity-name'>{bestTotalName[sortTotal.length - 2]}</div>
-              <div className='total-profit'>
-                <h3>Total Profit</h3>
-                <h2 className='top-total-quantity-products'>{everyTotal[everyTotal.length - 2]}</h2>
-              </div>
-            </div>
-            <div className='best-total-parent'>
-              <img src={bestTotalImg[sortTotal.length - 3]} className="best-total-img"/>
-              <div className='best-total-quantity-name'>{bestTotalName[sortTotal.length - 3]}</div>
-              <div className='total-profit'>
-                <h3>Total Profit</h3>
-                <h2 className='top-total-quantity-products'>{everyTotal[everyTotal.length - 3]}</h2>
-              </div>
-            </div>
-            <div className='best-total-parent'>
-              <img src={bestTotalImg[sortTotal.length - 4]} className="best-total-img"/>
-              <div className='best-total-quantity-name'>{bestTotalName[sortTotal.length - 4]}</div>
-              <div className='total-profit'>
-                <h3>Total Profit</h3>
-                <h2 className='top-total-quantity-products'>{everyTotal[everyTotal.length - 4]}</h2>
-              </div>
-            </div>
-            <div className='best-total-parent'>
-              <img src={bestTotalImg[sortTotal.length - 5]} className="best-total-img"/>
-              <div className='best-total-quantity-name'>{bestTotalName[sortTotal.length - 5]}</div>
-              <div className='total-profit'>
-                <h3>Total Profit</h3>
-                <h2 className='top-total-quantity-products'>{everyTotal[everyTotal.length - 5]}</h2>
-              </div>
-            </div>
+           {totalIteration(1)}
+           {totalIteration(2)}
+           {totalIteration(3)}
+           {totalIteration(4)}
+           {totalIteration(5)}
           </div>
         </div>
       </div>

@@ -439,7 +439,7 @@ tr td{
   border: 1px solid #ddd;
   text-align: center;
   border-radius: 8px;
-  width: 30%;
+  width: 20%;
   margin: 6px;
 
 }
@@ -461,11 +461,11 @@ tr td{
   text-align: center;
 }
 .line-chart{
-  width: 45%;
+  width: 40%;
 }
 .pie-chart{
   width: 30%;
-  margin: 20px;
+  margin: 10px;
 }
 .best-quantity-img{
   width: 60px;
@@ -567,7 +567,7 @@ tr td{
 }
 
  .pie-chart{
-  width: 40%;
+  width: 50%;
 } 
 .line-chart{
   width: 100%;

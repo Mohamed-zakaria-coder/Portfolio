@@ -530,6 +530,207 @@ export default[
       }
     ]
   },
+   {
+    category_id : 3,
+    id : 36,
+    name : "Chicken Sandwich",
+    Image : "https://img.freepik.com/free-photo/tasty-healthy-burgers-with-chicken-breast_1220-7107.jpg?size=626&ext=jpg&ga=GA1.2.489202319.1659533835",
+    size : [
+      {
+        name: "S",
+        price: 8
+      }, {
+        name: "M",
+        price: 14
+      }
+    ]
+  },
+   {
+    category_id : 3,
+    id : 37,
+    name : "Chicken Burger",
+    Image : "https://img.freepik.com/free-photo/tasty-healthy-burgers-with-chicken-breast_1220-7105.jpg?size=626&ext=jpg&ga=GA1.2.489202319.1659533835",
+    size : [
+      {
+        name: "S",
+        price: 9
+      }, {
+        name: "M",
+        price: 13
+      }
+    ]
+  },
+   {
+    category_id : 3,
+    id : 38,
+    name : "Vegan Burger",
+    Image : "https://img.freepik.com/free-photo/tofu-burger-with-vegetables-plate_1220-7119.jpg?size=626&ext=jpg&ga=GA1.2.489202319.1659533835",
+    size : [
+      {
+        name: "S",
+        price: 6
+      }, {
+        name: "M",
+        price: 9
+      }
+    ]
+  },
+   {
+    category_id : 3,
+    id : 39,
+    name : "Vegan Burger",
+    Image : "https://img.freepik.com/free-photo/vegan-burgers-with-beans-vegetables_661915-302.jpg?size=626&ext=jpg&ga=GA1.2.489202319.1659533835",
+    size : [
+      {
+        name: "S",
+        price: 5
+      }, {
+        name: "M",
+        price: 11
+      },{
+        name:"L",
+        price: 18
+        }
+    ]
+  },
+   {
+    category_id : 3,
+    id : 40,
+    name : "Checkin Burger",
+    Image : "https://media.istockphoto.com/photos/chicken-burger-picture-id1266942681?b=1&k=20&m=1266942681&s=170667a&w=0&h=e6_7PWDPw5jqEniuyYG3Gg5Fwkm24ltrpFj-EFdSQpA=",
+    size : [
+      {
+        name: "S",
+        price: 3
+      }, {
+        name: "M",
+        price: 5
+      },{
+        name:"L",
+        price: 9
+        }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 41,
+    name : "Carrot Juice",
+    Image : "https://thumbs.dreamstime.com/b/carrot-juice-13367762.jpg",
+    size : [
+      {
+        name: "S",
+        price: 4
+      }, {
+        name: "M",
+        price: 7
+      }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 42,
+    name : "Orange Juice",
+    Image : "https://thumbs.dreamstime.com/b/orange-juice-orange-slices-green-leaf-isolated-white-background-juice-glass-orange-juice-orange-slices-123408777.jpg",
+    size : [
+      {
+        name: "S",
+        price: 5
+      }, {
+        name: "M",
+        price: 7
+      }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 43,
+    name : "Tomato Juice",
+    Image : "https://thumbs.dreamstime.com/b/tomato-juice-fresh-tomatoes-basil-wooden-table-31283637.jpg",
+    size : [
+      {
+        name: "S",
+        price: 2
+      }, {
+        name: "M",
+        price: 5
+      }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 44,
+    name : "Lemon Juice",
+    Image : "https://thumbs.dreamstime.com/b/lemon-juice-fresh-mint-glass-wooden-background-44544296.jpg",
+    size : [
+      {
+        name: "S",
+        price: 3
+      }, {
+        name: "M",
+        price: 6
+      }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 45,
+    name : "WaterMelon Juice",
+    Image : "https://thumbs.dreamstime.com/b/watermelon-juice-some-pieces-watermelon-30043702.jpg",
+    size : [
+      {
+        name: "S",
+        price: 4
+      }, {
+        name: "M",
+        price: 9
+      }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 46,
+    name : "Mango Juice",
+    Image : "https://thumbs.dreamstime.com/b/mango-juice-glass-mango-juice-glass-straw-wooden-table-108531678.jpg",
+    size : [
+      {
+        name: "S",
+        price: 9
+      }, {
+        name: "M",
+        price: 16
+      }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 47,
+    name : "Peach Juice",
+    Image : "https://thumbs.dreamstime.com/b/peach-juice-24636207.jpg",
+    size : [
+      {
+        name: "S",
+        price: 4
+      }, {
+        name: "M",
+        price: 6
+      }
+    ]
+  },
+   {
+    category_id : 5,
+    id : 48,
+    name : "Apple Juice",
+    Image : "https://thumbs.dreamstime.com/b/apple-juice-fresh-apples-isolated-white-36523922.jpg",
+    size : [
+      {
+        name: "S",
+        price: 4
+      }, {
+        name: "M",
+        price: 7
+      }
+    ]
+  },
 ]
 export const categories = [
   {
