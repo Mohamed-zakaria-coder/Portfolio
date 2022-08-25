@@ -16,13 +16,14 @@ const Statistics = () => {
   const productsQantityTotal = Data.map(product => {
     return {id: product.id, quantity: 0, total: 0, productName: product.name, img: product.Image , categoryId: product.category_id}
   })
-  const billDate = bills.length && bills.map(bill => { 
+  const billDate = bills.map(bill => bill.date) && bills.map(bill => { 
     return {
       date : ((bill.date.slice(0,10))),
       total: 0,
     } 
     
   })
+  console.log(bills.length)
   const billDateEachDay = new Set(billDate.map(bill=>JSON.stringify(bill)))
    
   const parseInbillDateEachDay = Array.from(billDateEachDay).map(bill => JSON.parse(bill))
@@ -159,7 +160,7 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
     const theQuantityProduct = categoriesFilter.filter(category => category.categoryId === product.categoryId)[0]
 
     theQuantityProduct.quantity += product.quantity
-    console.log(categoriesFilter)
+    
 
   })
 
