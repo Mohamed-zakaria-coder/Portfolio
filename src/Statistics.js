@@ -16,25 +16,25 @@ const Statistics = () => {
   const productsQantityTotal = Data.map(product => {
     return {id: product.id, quantity: 0, total: 0, productName: product.name, img: product.Image , categoryId: product.category_id}
   })
-  const billDate = bills.map(bill => bill.date) && bills.map(bill => { 
+  const billDate = bills && bills.map(bill => { 
     return {
       date : ((bill.date.slice(0,10))),
       total: 0,
     } 
     
   })
-  console.log(bills.length)
-  const billDateEachDay = new Set(billDate.map(bill=>JSON.stringify(bill)))
+  
+  const billDateEachDay = bills && new Set(billDate.map(bill=>JSON.stringify(bill)))
    
-  const parseInbillDateEachDay = Array.from(billDateEachDay).map(bill => JSON.parse(bill))
+  const parseInbillDateEachDay = bills && Array.from(billDateEachDay).map(bill => JSON.parse(bill))
   
  
-  bills.map(bill => bill.products.map(product => { 
+  bills && bills.map(bill => bill.products.map(product => { 
     const totalEarningsDay = (parseInbillDateEachDay.filter(parseDate => parseDate.date === bill.date.slice(0,10))[0])
     totalEarningsDay.total += product.total
  
   }))
-  bills.map(bill => bill.products.map(sale => {
+  bills && bills.map(bill => bill.products.map(sale => {
     const theProduct = (productsQantityTotal.filter(product => product.id === sale.product_id)[0])
     theProduct.quantity += sale.quantity
     theProduct.total += sale.total
@@ -43,22 +43,22 @@ const Statistics = () => {
 const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMonth(),);
   var start = new Date();
   start.setHours(0, 0, 0, 0);
-  const DateOfTheDayArr = bills.filter(bill => bill.date > start.toISOString())
-  const totalEarningsOfTheDay = DateOfTheDayArr.length && DateOfTheDayArr
+  const DateOfTheDayArr = bills && bills.filter(bill => bill.date > start.toISOString())
+  const totalEarningsOfTheDay = DateOfTheDayArr && DateOfTheDayArr
     .map(bill => bill.products.map(product => product.total))
     .map(bill => bill.length &&  [...bill].reduce((prev, curr) => prev + curr))
     .reduce((prev, curr) => {
       return (Number(prev) + Number(curr))
     })
-  const totalMonthEarningsArr = bills.filter(bill => bill.date >= firstDayCurrentMonth.toISOString())
-  const totalMonthEarnings = totalMonthEarningsArr.length && totalMonthEarningsArr
+  const totalMonthEarningsArr = bills && bills.filter(bill => bill.date >= firstDayCurrentMonth.toISOString())
+  const totalMonthEarnings = totalMonthEarningsArr && totalMonthEarningsArr
     .map(bill => bill.products.map(product => product.total))
     .map(bill => bill.length && [...bill].reduce((prev, curr) => prev + curr))
     .reduce((prev, curr) => {
       return (Number(prev) + Number(curr))
     })
   
-    bills.map(bill => bill.products.map(sale => {
+    bills && bills.map(bill => bill.products.map(sale => {
       const theProduct = (productsQantityTotal
       .filter(product => product.id === sale.product_id)[0])
       theProduct.quantity += sale.quantity
@@ -134,7 +134,7 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
       
     }
   const state1 = {
-    labels: parseInbillDateEachDay.map(date => date.date),
+    labels: parseInbillDateEachDay && parseInbillDateEachDay.map(date => date.date),
     datasets: [
       {
         label: 'Total Earnings',
@@ -142,7 +142,7 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
         hoverBackgroundColor: [
           '#501800', '#4B5000', '#175000', '#003350', '#35014F'
         ],
-        data: parseInbillDateEachDay.map(e=>e.total)
+        data: parseInbillDateEachDay && parseInbillDateEachDay.map(e=>e.total)
       }
     ]
   }
@@ -164,7 +164,7 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
 
   })
 
-  const data = {
+   const data = {
     labels: categoriesFilter.map(category => category.categoryName),
     datasets: [ 
       {
@@ -190,21 +190,20 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
       }
     ]
   };
-  
   return (
     <div className='statistics-parent'>
       <div className='total-earnings-parent'>
         <div className='total-earnings'>
           <div>Total Earnings</div>
-          <div>${totalEarnings}</div>
+          <div>{totalEarnings > 0 ?  `$${totalEarnings}`  : 0}</div>
         </div>
         <div className='total-earnings'>
           <div>Month Earnings</div>
-          <div>${totalMonthEarnings}</div>
+          <div>{totalMonthEarnings > 0 ?  `$${totalMonthEarnings}` : 0}</div>
         </div>
         <div className='total-earnings'>
           <div>Today Earnings</div>
-          <div>${totalEarningsOfTheDay}</div>
+          <div>{totalEarningsOfTheDay > 0 ?  `$${totalEarningsOfTheDay}` : 0}</div>
         </div>
       </div>
       <div className="stats-container">
