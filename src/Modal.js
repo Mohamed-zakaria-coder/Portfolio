@@ -1,7 +1,6 @@
 import React from 'react';
 import Data from './Data';
 const Modal = (props) => {
-
   return (
     <div className='modal-container'>
       <div className='one' onClick={() => null}>
@@ -17,7 +16,7 @@ const Modal = (props) => {
               <select onChange={props.handleChangePrice} className='select'>{props
                   .selectedPizza
                   .size
-                  .map(e => {
+                  .map((e) => {
                     return (
                       <option value={e.price}>Size: {e.name}
                         - Price: {e.price}$
@@ -25,10 +24,11 @@ const Modal = (props) => {
 
                     )
                   })}</select>
+                  
               <select className='select-number' onChange={props.handleChange}>
                 
-                <option value='1'>1</option>
-                <option value="2">2</option>
+                <option value='1' >1</option>
+                <option value="2" >2</option>
                 <option value="3">3</option>
               </select>
               <div className='total-container'>
@@ -46,7 +46,8 @@ const Modal = (props) => {
                   price: Number(props.selectedPrice),
                   total: props.selectedQuantity * props.selectedPrice
                 }
-              ]); props.setShowBill(prev => !prev)
+              ]); props.setShowBill(prev => !prev);
+              
             }}>ِAdd</button>
           </div>
         </div>

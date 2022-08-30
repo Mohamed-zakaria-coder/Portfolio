@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './File.css';
 import Nav from './Nav';
 import Sales from './Sales';
 import Home from './Home';
 import Statistics from './Statistics';
 import {BrowserRouter, Routes, Route, NavLink, Router} from "react-router-dom";
+
 function App() {
+  
   return (
     <div className='container'>
       <Nav/>
@@ -18,4 +20,5 @@ function App() {
     </div>
   )
 }
+
 export default App;
