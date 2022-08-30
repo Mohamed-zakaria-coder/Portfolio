@@ -44,7 +44,7 @@ const firstDayCurrentMonth = getFirstDayOfMonth(date.getFullYear(), date.getMont
   var start = new Date();
   start.setHours(0, 0, 0, 0);
   const DateOfTheDayArr = bills && bills.filter(bill => bill.date > start.toISOString())
-  const totalEarningsOfTheDay = DateOfTheDayArr.length && DateOfTheDayArr
+  const totalEarningsOfTheDay = DateOfTheDayArr && DateOfTheDayArr
     .map(bill => bill.products.map(product => product.total))
     .map(bill => bill.length &&  [...bill].reduce((prev, curr) => prev + curr))
     .reduce((prev, curr) => {
