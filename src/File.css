@@ -653,6 +653,10 @@ tr td{
   color:#ff004f;
   cursor: pointer;
   margin-left: 6px;
+  animation-name: change-color;
+  animation-duration: 3s;
+  /* animation-timing-function: linear; */
+  animation-iteration-count: infinite;
 }
 .total-price-container{
   margin: 30px 20px;
@@ -689,6 +693,17 @@ tr td{
   }
   .table-head th{
     padding: 1px;
+  }
+}
+@keyframes change-color{
+  0% {
+    color: blue;
+  }
+  50%{
+    color: #ff004f;
+  }
+  100%{
+    color: blue;
   }
 }
 
