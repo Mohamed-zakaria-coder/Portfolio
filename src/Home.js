@@ -4,7 +4,7 @@ import Modal from './Modal';
 import {FiSearch} from 'react-icons/fi';
 import Data, {categories} from './Data';
 import Pizza from './Pizza';
-import {FaMoneyBillWave} from 'react-icons/fa'
+import {TiShoppingCart} from 'react-icons/ti'
 import ShowOrderMenu from './ShowOrderMenu';
 
 const Home = (props) => {
@@ -12,7 +12,7 @@ const Home = (props) => {
   const [search,
     setSearch] = React.useState('')
   React.useEffect(() => {
-    filterProducts(6)
+    filterProducts(1)
 
   }, [])
   const [products,
@@ -134,7 +134,7 @@ const Home = (props) => {
                 if (search.length > 1) {
                   filterProducts(0)
                 }else{
-                  filterProducts(6)
+                  filterProducts(1)
                   
                 }
               }}/>
@@ -159,7 +159,7 @@ const Home = (props) => {
       </div>
       
       <div className='out-line-parent' onClick={() => setShowOrderMenu(prev => !prev)}>
-        <FaMoneyBillWave className='out-line-menu' />
+        <TiShoppingCart className='out-line-menu' />
       </div> 
 
       {showOrderMenu  ? <div className='ordermenu-parent'>
