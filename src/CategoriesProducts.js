@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {NavLink} from 'react-router-dom';
-import Data from './Data';
-// .filter(prod => prod.product_type === params.product_type)
-// http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${params.pro
-// duct_type}
+import Data from './Data'; 
+
 const CategoriesProducts = () => {
   const Navigate = useNavigate()
   const [loading,
