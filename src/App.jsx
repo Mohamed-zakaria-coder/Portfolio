@@ -1,22 +1,35 @@
 import React, {useEffect, useState} from 'react';
 import './File.css';
-import Nav from './Nav';
-import Sales from './Sales';
+import Navbar from './Navbar';
+import ImageContent from './ImageContent';
+import TopProducts from './TopProducts';
+import Footer from './Footer';
+import List from './List';
+import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
-import Statistics from './Statistics';
-import {BrowserRouter, Routes, Route, NavLink, Router} from "react-router-dom";
-
+import Categories from './Categories';
+import CategoriesProducts from './CategoriesProducts';
+import SpecificProduct from './SpecificProduct';
 function App() {
-  
+    const [showList, setShowList] = useState(false)
+    function showListComp(){
+      setShowList(prev => !prev)
+    }
   return (
     <div className='container'>
-      <Nav/>
-      <Routes>
-        <Route path="/Home" element={< Home />}></Route>
-        <Route path="/Sales" element={< Sales />}></Route>
-        <Route path="/Stats" element={< Statistics />}></Route>
-        <Route path="*" element={< Home />}></Route>
-      </Routes>
+        <Navbar showListComp={showListComp}/>
+       {showList && <List showListComp={showListComp}/>}
+       
+       <Footer />
+       <Routes>
+        <Route path ='/home' element={<Home />} />
+        <Route path ='/categories' element={<Categories/>} />
+        <Route path='/products/:product_type' element={<CategoriesProducts/>} />
+        <Route path= '/products/:product_type/:id' element={<SpecificProduct/>} />
+        <Route path='*' element={<Home />} />
+       </Routes>
+       
+
     </div>
   )
 }
