@@ -10,7 +10,12 @@ export default function TopProducts() {
          
     }, [])
   const Navigate = useNavigate()
-    const topProducts = topProductsData.map(product =>  {
+     
+  return (
+    <div className='topProducts-container'>
+      <h2 className='topProducts-heading'>TOP PRODUCTS</h2>
+      <div className='topProducts-info-parent'> 
+      {topProductsData.map(product =>  {
         return (
           
             <div className='topProducts-info' onClick={() => Navigate(`/products/${product.product_type}/${product.id}`)}>
@@ -23,12 +28,7 @@ export default function TopProducts() {
                 <div>${product.price}</div>
             </div>
         )
-    })
-  return (
-    <div className='topProducts-container'>
-      <h2 className='topProducts-heading'>TOP PRODUCTS</h2>
-      <div className='topProducts-info-parent'> 
-        {topProducts}
+    })}
       </div>
     </div>
   )
