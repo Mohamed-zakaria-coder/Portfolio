@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom';
 import Data from './Data'; 
 
 const CategoriesProducts = () => {
+  const params = useParams();
   const Navigate = useNavigate()
   const [loading,
     setLoading] = useState(false)
@@ -11,7 +12,7 @@ const CategoriesProducts = () => {
     setProducts] = useState([])
   useEffect(() => {
     setLoading(true)
-    fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${params.product_type}`)
+    fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${params.product_type}`)
       .then(res => res.json())
       .then(data => setProducts(data))
     setLoading(false)
@@ -19,7 +20,6 @@ const CategoriesProducts = () => {
     setSelectBrand('all')
   }, [])
   
-  const params = useParams();
   const [selectCategory,
     setSelectCategory] = useState('')
   const [selectBrand,

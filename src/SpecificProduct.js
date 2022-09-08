@@ -2,14 +2,14 @@ import React, {useState, useEffect} from 'react';
 import {NavLink, useParams} from 'react-router-dom';
 
 const SpecificProduct = () => {
+  const idParam = useParams();
   const [products,
     setProducts] = useState([])
   useEffect(() => {
-    fetch(`http://makeup-api.herokuapp.com/api/v1/products/${Number(idParam.id)}.json`)
+    fetch(`https://makeup-api.herokuapp.com/api/v1/products/${Number(idParam.id)}.json`)
       .then(res => res.json())
       .then(data => setProducts(data))
   }, [])
-  const idParam = useParams();
 
 
   return (

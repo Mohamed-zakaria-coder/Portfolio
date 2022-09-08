@@ -3,13 +3,13 @@ import { NavLink, useNavigate } from 'react-router-dom'
 
 export default function TopProducts() {
     const [topProductsData, setTopProductsData] = useState([])
+    const Navigate = useNavigate()
     useEffect(() => {
-        fetch("http://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick")
+        fetch("https://makeup-api.herokuapp.com/api/v1/products.json?brand=covergirl&product_type=lipstick")
         .then(res => res.json())
         .then(data => setTopProductsData(data))
          
     }, [])
-  const Navigate = useNavigate()
      
   return (
     <div className='topProducts-container'>
