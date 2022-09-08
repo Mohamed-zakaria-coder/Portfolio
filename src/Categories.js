@@ -5,7 +5,7 @@ export default function Categories() {
   const Navigate = useNavigate()
   return (
    
-        <div className='categories-parent'>
+        <div className='categories-parent'> 
     {Data.map( category => {
       return(
           <div class="card" onClick={() => Navigate(`/products/${category.product_type}`)}>
