@@ -18,7 +18,6 @@ const CategoriesProducts = () => {
     setLoading(false)
     setSelectCategory('all')
     setSelectBrand('all')
-    setFilteredProducts(filterProducts)
   }, [])
   
   function HandleFilters(){
@@ -29,7 +28,7 @@ const CategoriesProducts = () => {
         setFilteredProducts(products)
       }
       if(selectCategory != "all"){
-        setFilteredProducts(products.filter(product => product.category == selectCategory)
+        setFilteredProducts(filteredProducts.filter(product => product.category == selectCategory)
         )
       }
   }
