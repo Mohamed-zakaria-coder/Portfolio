@@ -97,7 +97,7 @@ const CategoriesProducts = () => {
             )
           })
           : products
-            .filter(product => product.brand == selectBrand || product.category == selectCategory)
+            .filter(product => product.brand == selectBrand && product.category == selectCategory)
             .map(product => {
               return (
                 <div className='products-parent'>
