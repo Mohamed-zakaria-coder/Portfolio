@@ -25,6 +25,8 @@ const CategoriesProducts = () => {
       if(selectBrand != "all"){
         setFilteredProducts(products.filter(product => product.brand == selectBrand)
         )
+      }else{
+        setFilteredProducts(products)
       }
       if(selectCategory != "all"){
         setFilteredProducts(products.filter(product => product.category == selectCategory)
