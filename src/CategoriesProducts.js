@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {NavLink} from 'react-router-dom';
 import Data from './Data'; 
-
 const CategoriesProducts = () => {
+  const [filteredProducts, setFilteredProducts] = useState([])
   const params = useParams();
   const Navigate = useNavigate()
   const [loading,
@@ -14,21 +14,35 @@ const CategoriesProducts = () => {
     setLoading(true)
     fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${params.product_type}`)
       .then(res => res.json())
-      .then(data => setProducts(data))
+      .then(data => (setFilteredProducts(data),setProducts(data)))
     setLoading(false)
     setSelectCategory('all')
     setSelectBrand('all')
+    setFilteredProducts(filterProducts)
   }, [])
   
+  function HandleFilters(){
+      if(selectBrand != "all"){
+        setFilteredProducts(products.filter(product => product.brand == selectBrand)
+        )
+      }
+      if(selectCategory != "all"){
+        setFilteredProducts(products.filter(product => product.category == selectCategory)
+        )
+      }
+  }
+ 
   const [selectCategory,
     setSelectCategory] = useState('')
   const [selectBrand,
     setSelectBrand] = useState('')
   function ChangeCategory(e) {
     setSelectCategory(e.target.value)
+    HandleFilters()
   }
   function ChangeBrand(e) {
     setSelectBrand(e.target.value)
+    HandleFilters()
   }
   const filterProducts = products.filter(prod => prod.product_type === params.product_type)
   const filterCategroy = new Set(filterProducts.map(product => product.category))
@@ -79,8 +93,7 @@ const CategoriesProducts = () => {
               "Loading..."
             </div>
           : ''}
-        { selectBrand === "all" && selectCategory === "all"
-          ? products.map(product => {
+        {filteredProducts.map(product => {
             return (
               <div className='products-parent'>
                 <div
@@ -95,24 +108,6 @@ const CategoriesProducts = () => {
                 </div>
               </div>
             )
-          })
-          : products
-            .filter(product => product.brand == selectBrand && product.category == selectCategory)
-            .map(product => {
-              return (
-                <div className='products-parent'>
-                  <div
-                    class="products-card"
-                    onClick={() => Navigate(`/products/${product.product_type}/${product.id}`)}>
-                    <div className='img-container'>
-                      <img src={product.api_featured_image}/></div>
-                    <p className='product-name product'>{product.name}</p>
-                    <p className='product-brand product'>Brand:{product.brand}</p>
-                    <p className='product-category product'>Category:{product.category}</p>
-                    <p className='product-price product'>Price:{product.price}$</p>
-                  </div>
-                </div>
-              )
             })}
       </div>
     </div>
