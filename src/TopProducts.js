@@ -22,7 +22,7 @@ export default function TopProducts() {
                 <div className='topProductsImg-container'>
                 <img src={product.image_link}/>
                 </div>
-                <div className='topProducts-name'>{product.name}</div>
+                <h5 className='topProducts-name'>{product.name}</h5>
                 <div>Brand:{product.brand}</div>
                 <div>Category:{product.category}</div>
                 <div>${product.price}</div>

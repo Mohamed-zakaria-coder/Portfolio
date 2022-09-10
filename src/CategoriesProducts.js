@@ -46,7 +46,7 @@ const CategoriesProducts = () => {
   }
   function ChangeBrand(e) {
     setSelectBrand(e.target.value)
-    // HandleFilters()
+  
   }
   const filterProducts = products.filter(prod => prod.product_type === params.product_type)
   const filterCategroy = new Set(filterProducts.map(product => product.category))
