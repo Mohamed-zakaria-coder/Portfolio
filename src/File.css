@@ -350,7 +350,7 @@
     margin-left: 2px;;
     padding: 7px;
     color: #546ece;
-    width: 81%;
+    width: 80%;
     list-style: none;
     outline: none;
   }
@@ -458,9 +458,35 @@
     margin-top: 48px;
     margin-bottom: 80px;
   }
-  
+  .select-category,
+  .select-brand{
+    margin-left: 2px;;
+    padding: 7px;
+    color: #546ece;
+    width: 80%;
+    list-style: none;
+    outline: none;
+  }
+  .filter-button{
+    padding: 5px;
+  }
+  .select-parent{
+    width: 98%;
+    margin: auto;
+  }
+  .select-brand-label,
+  .select-category-label{
+    font-size: 11px;
+  }
 }
 @media only screen and (max-width: 290px){
+  .select-parent{
+    width: 100%;
+  }
+  .select-brand-label,
+  .select-category-label{
+    font-size: 8px;
+  }
   .products-container{
     display: grid;
     grid-template-columns: repeat(1, minmax(auto ,1fr));
