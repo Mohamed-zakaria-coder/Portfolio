@@ -17,8 +17,8 @@ const CategoriesProducts = () => {
       .then(res => res.json())
       .then(data => (setFilteredProducts(data), setProducts(data)))
     setLoading(false)
-    setSelectCategory('all')
-    setSelectBrand('all')
+    // setSelectCategory('all')
+    // setSelectBrand('all')
   }, [])
 
   function HandleFilters() {
@@ -68,7 +68,7 @@ const CategoriesProducts = () => {
             onClick={HandleFilters}
             className="select-brand"
             value={selectBrand}>
-            <option selected value='all'>All</option>
+            <option defaultValue='all' value='all'>All</option>
             {([...filterBrand].filter(prod => prod != null).map(product => {
               return (
                 <option>{product}</option>
@@ -87,7 +87,7 @@ const CategoriesProducts = () => {
             onChange={ChangeCategory}
             value={selectCategory}
             className="select-category">
-            <option selected value='all'>All</option>
+            <option defaultValue='all' value='all'>All</option>
 
             {([...filterCategroy].filter(prod => prod != null).map(product => {
               return (
