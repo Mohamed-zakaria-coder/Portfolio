@@ -251,11 +251,16 @@
   padding: 10px;
 }
 .product{
-  margin: 6px;
-  padding: 3px;
+  margin: 1px 6px;
+  min-height: 40px;
+  line-height: 16px;
+  font-size: 14px;
   color: #546ece;
+  
+  /* margin: 6px;
+  padding: 3px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 15px; */
 }
 .products-parent{
   width: 100%;
@@ -361,6 +366,13 @@
     gap: 4px;
     height: 100%;
     width: 100%;
+  }
+  .product{
+  margin: 1px 6px;
+  min-height: 30px;
+  line-height: 16px;
+  font-size: 14px;
+  color: #546ece;
   }
   .topProducts-info-parent{
     display:grid;
