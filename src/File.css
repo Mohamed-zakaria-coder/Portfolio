@@ -152,6 +152,7 @@
   bottom: 0;
   width: 100%;
   margin-top: 50px;
+  z-index: 500;
 }
 .footer-heading{
   color: white;
@@ -289,6 +290,8 @@
   background-color: #314281;
   color: white;
   padding: 6px 20px;
+  border: none;
+  border-radius: 8px;
   
 }
 /* End categoriesProducts */

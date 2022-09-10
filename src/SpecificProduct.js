@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {NavLink, useParams} from 'react-router-dom';
+import {motion} from 'framer-motion'
 
 const SpecificProduct = () => {
   const idParam = useParams();
@@ -11,10 +12,17 @@ const SpecificProduct = () => {
       .then(data => setProducts(data))
   }, [])
 
-
   return (
     <div>
-      <div className='specific-product'>
+      <motion.div
+        className='specific-product'
+        initial={{
+        opacity: 0
+      }}
+        animate={{
+        opacity: 1
+      }}
+        transition={{duration: 1.5, delay: 0.5}}>
 
         <div className='main-content-parent'>
           <h2>{products.name}</h2>
@@ -38,7 +46,7 @@ const SpecificProduct = () => {
         <div className='product-price item'>Price:{products.price}$</div>
         <div className='product-brand item'>Brand:{products.brand}</div>
         <p className='product-description item'>{products.description}</p>
-      </div>
+      </motion.div>
     </div>
   );
 }
