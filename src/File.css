@@ -279,6 +279,18 @@
   transform:scale(1.1);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+.filter-button-parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+}
+.filter-button{
+  background-color: #314281;
+  color: white;
+  padding: 6px 20px;
+  
+}
 /* End categoriesProducts */
 /* Start Specific */
 
@@ -338,7 +350,7 @@
     margin-left: 2px;;
     padding: 7px;
     color: #546ece;
-    width: 83%;
+    width: 81%;
     list-style: none;
     outline: none;
   }
@@ -476,4 +488,5 @@
   
 }
 /* End Media */
+
 

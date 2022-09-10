@@ -64,7 +64,7 @@ const CategoriesProducts = () => {
       <div className='select-parent'>
         <div class="select-brand-parent">
           <label htmlFor="select-brand" className='select-brand-label'>Brand</label>
-          <select onChange={ChangeBrand} onClick={HandleFilters} className="select-brand" value={selectBrand}>
+          <select onChange={ChangeBrand} className="select-brand" value={selectBrand}>
             <option value='all'>All</option>
             {([...filterBrand].filter(prod => prod != null).map(product => {
               return (
@@ -74,10 +74,13 @@ const CategoriesProducts = () => {
 
           </select>
         </div>
+      <div className='filter-button-parent'>
+        <button class="filter-button" onClick={HandleFilters}>Filter</button>
+        </div>
         <div className='select-category-parent'>
           <label htmlFor="select-category" className='select-category-label'>Category</label>
           <select
-            onClick={HandleFilters}
+            
             onChange={ChangeCategory}
             value={selectCategory}
             className="select-category">
@@ -86,8 +89,8 @@ const CategoriesProducts = () => {
             {([...filterCategroy].filter(prod => prod != null).map(product => {
               return (
                 <option>{product}</option>
-              )
-            }))}
+                )
+              }))}
           </select>
         </div>
       </div>
