@@ -46,7 +46,7 @@ const CategoriesProducts = () => {
   }
   function ChangeBrand(e) {
     setSelectBrand(e.target.value)
-  
+    
   }
   const filterProducts = products.filter(prod => prod.product_type === params.product_type)
   const filterCategroy = new Set(filterProducts.map(product => product.category))
@@ -63,9 +63,8 @@ const CategoriesProducts = () => {
       })}
       <div className='select-parent'>
         <div class="select-brand-parent">
-        <button onClick={HandleFilters}>Filter</button>
           <label htmlFor="select-brand" className='select-brand-label'>Brand</label>
-          <select onChange={ChangeBrand} className="select-brand" value={selectBrand}>
+          <select onChange={ChangeBrand} onClick={HandleFilters} className="select-brand" value={selectBrand}>
             <option value='all'>All</option>
             {([...filterBrand].filter(prod => prod != null).map(product => {
               return (
@@ -76,10 +75,9 @@ const CategoriesProducts = () => {
           </select>
         </div>
         <div className='select-category-parent'>
-            <button onClick={HandleFilters}>Filter</button>
           <label htmlFor="select-category" className='select-category-label'>Category</label>
           <select
-            
+            onClick={HandleFilters}
             onChange={ChangeCategory}
             value={selectCategory}
             className="select-category">
