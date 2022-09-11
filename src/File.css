@@ -86,34 +86,34 @@
 }
 /* End ImgContent */
 
-/* Start TopProducts */
-.topProducts-info{
+/* Start top-products */
+.top-products-info{
   transition: 1s;
   color: #546ece;
   width: 100%;
   height: 100%;
 
 }
-.topProducts-info:link{
+.top-products-info:link{
   text-decoration: none;
 
 }
-.topProducts-info:hover{
+.top-products-info:hover{
   transform:scale(1.1);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
-  .topProducts-container{
+  .top-products-container{
     padding-bottom: 10px;
     margin:35px 20px 65px 20px;
   }
-  .topProducts-heading{
+  .top-products-heading{
     padding: 10px;
     color: #546ece;
     text-align: center;
     font-weight: bold;
     margin-bottom: 40px;
   }
-  .topProducts-info-parent{
+  .top-products-info-parent{
     display: flex;
     justify-content: center;
     
@@ -121,29 +121,29 @@
     gap: 10px;
     margin: 20px 60px;
   }
-  .topProducts-info-parent img{
+  .top-products-info-parent img{
     width: 80px;
     text-align: center;
   }
-  .topProducts-info div{
+  .top-products-info div{
     padding: 5px;
     margin: 2px;
     font-weight: bold;
     font-size: 13px;
   }
-  .topProductsImg-container{
+  .top-productsImg-container{
     display: flex;
     justify-content: center;
     
   }
-  .topProducts-name{
+  .top-products-name{
    margin: 1px 8px; 
    width: 100%;
    font-size: 12px; 
    min-height: 30px;
    line-height: 16px;
   }
-  /* End TopProducts */
+  /* End top-products */
   /* Start Footer  */
 .footer-container{
   background-color: darkslateblue;
@@ -375,7 +375,7 @@
 /* End CategoryProducts */
 /* Start Media */
 @media only screen and (max-width: 768px){
-  .topProducts-name{
+  .top-products-name{
     min-height: 50px;
     font-size: 11px;
   }
@@ -394,7 +394,7 @@
   font-size: 14px;
   color: #546ece;
   }
-  .topProducts-info-parent{
+  .top-products-info-parent{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     
@@ -449,7 +449,7 @@
     /* padding: 10px; */
     margin: 20px;
   }
-  .topProducts-info-parent {
+  .top-products-info-parent {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
@@ -497,7 +497,7 @@
     /* padding: 10px; */
     margin: 70px;
   }
-  .topProducts-info-parent {
+  .top-products-info-parent {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
@@ -509,7 +509,7 @@
     margin-top: 48px;
     margin-bottom: 80px;
   }
-  .topProducts-name{
+  .top-products-name{
     min-height: 40px;
     font-size: 11px;
   }
