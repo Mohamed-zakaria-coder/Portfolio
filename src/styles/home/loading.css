@@ -1,0 +1,15 @@
+.loading-parent {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a192f;
+  width: 100vw;
+}
+.m-icon-loading {
+  font-size: 75px;
+  color: transparent;
+  color: #5ef0cf;
+  border: 8px solid #316e61;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}

@@ -1,0 +1,91 @@
+.work-parent {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.cards-parent{
+  padding: 50px;
+}
+.head-parent {
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.work-heading {
+  color: #ccd6f6;
+  margin: 20px;
+}
+.card {
+  box-shadow: 0 3px 10px white;
+  padding: 15px;
+  margin-bottom: 30px;
+  animation-name: move-up;
+  transition: 0.6s;
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-10px);
+  list-style: none;
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #a8b2d1;
+}
+.card:hover h3 {
+  color: #5ef0cf;
+}
+
+.content-heading {
+  color: #ccd6f6;
+  padding: 10px;
+  margin: 10px;
+}
+.content-p {
+  text-align: center;
+  color: #a8b2d1;
+  padding: 0 8px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.heroku,
+.netlify {
+  color: #a8b2d1;
+  margin-left: 10px;
+  font-size: 25px;
+}
+.heroku:hover,
+.netlify:hover {
+  color: #5ef0cf;
+}
+.folder-icon {
+  color: #5ef0cf;
+  font-size: 26px;
+}
+footer {
+  color: #bec1c6;
+  padding-top: 20px;
+}
+footer ul {
+  padding: 17px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer ul li {
+  list-style: none;
+}
+@media only screen and (min-width: 738px){
+  .cards-parent{
+   margin: auto; 
+  }
+  .card{
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+  }
+}

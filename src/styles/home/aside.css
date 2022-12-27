@@ -1,0 +1,35 @@
+.aside-container {
+  display: none;
+  background-color: transparent;
+}
+.left-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+.left-sec .icon {
+  color: #ced2d6;
+  margin-top: 20px;
+  font-size: 24px;
+  padding: 2px;
+}
+.right-sec a {
+  color: #6f7a96;
+  transform: rotate(90deg);
+}
+.right-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media only screen and (min-width: 738px) {
+  .aside-container {
+    position: fixed;
+    top: calc(50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+}

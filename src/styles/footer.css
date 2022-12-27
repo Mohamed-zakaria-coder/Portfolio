@@ -1,0 +1,18 @@
+.footer{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 3px white;
+    color: #A9C7EA;
+    font-size: 14px;
+}
+.m-icon-footer{
+    font-size: 36px;
+  margin: 10px;
+  color: transparent;
+  color: #5ef0cf;
+  border: 8px solid #316e61;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #142239;
+}
