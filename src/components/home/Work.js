@@ -15,16 +15,16 @@ const Work = () => {
     <div className="work-parent" id="work"   >
       <h1 className="work-heading">Projects</h1>
       <div className="cards-parent">
-        <a href="https://mohamed-zakaria-coder.github.io/Makeup-Project/">
+        <a href="https://mohamed-zakaria-coder.github.io/Makeup-Project/" target="_blank" rel="noreferrer">
           <div className="card" data-aos="fade-up">
             <div className="head-parent">
               <FiFolder className="folder-icon" />
               <div>
-                <a href="https://main--whimsical-wisp-0d8690.netlify.app/">
-                  <SiNetlify className="netlify" />
-                </a>
-                <a href="https://makeup-project-2.herokuapp.com/">
+                <a href="https://makeup-project-2.herokuapp.com/" target="_blank" rel="noreferrer">
                   <SiHeroku className="heroku" />
+                </a>
+                <a href="https://main--whimsical-wisp-0d8690.netlify.app/" target="_blank" rel="noreferrer">
+                  <SiNetlify className="netlify" />
                 </a>
               </div>
             </div>
@@ -45,15 +45,15 @@ const Work = () => {
             </footer>
           </div>
         </a>
-        <a href="https://mohamed-zakaria-coder.github.io/Cashier/">
+        <a href="https://mohamed-zakaria-coder.github.io/Cashier/" target="_blank" rel="noreferrer">
           <div className="card"  data-aos="fade-up">
             <div className="head-parent">
               <FiFolder className="folder-icon" />
               <div>
-                <a href="https://new-app-1200.herokuapp.com/">
+                <a href="https://new-app-1200.herokuapp.com/" target="_blank" rel="noreferrer">
                   <SiHeroku className="heroku" />
                 </a>
-                <a href="https://sunny-frangollo-ff5b96.netlify.app/">
+                <a href="https://sunny-frangollo-ff5b96.netlify.app/" target="_blank" rel="noreferrer">
                   <SiNetlify className="netlify" />
                 </a>
               </div>
@@ -77,15 +77,15 @@ const Work = () => {
             </footer>
           </div>
           </a>
-          <a href="https://mohamed-zakaria-coder.github.io/landing-page/">
+          <a href="https://mohamed-zakaria-coder.github.io/landing-page/" target="_blank" rel="noreferrer">
           <div className="card" data-aos="fade-up">
             <div className="head-parent">
               <FiFolder className="folder-icon" />
               <div>
-                <a href="https://new-app-1200.herokuapp.com/">
+                <a href="https://landing-page5.herokuapp.com/" target="_blank" rel="noreferrer">
                   <SiHeroku className="heroku" />
                 </a>
-                <a href="https://634d4da02fd43224d47ff848--beautiful-meerkat-7c34a1.netlify.app/">
+                <a href="https://634d4da02fd43224d47ff848--beautiful-meerkat-7c34a1.netlify.app/" target="_blank" rel="noreferrer">
                   <SiNetlify className="netlify" />
                 </a>
               </div>

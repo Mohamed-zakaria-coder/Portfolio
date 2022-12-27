@@ -16,12 +16,14 @@
 }
 .right-sec a {
   color: #6f7a96;
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
+  writing-mode: vertical-lr;
 }
 .right-sec {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
 }
 @media only screen and (min-width: 738px) {
   .aside-container {

@@ -24,15 +24,19 @@
   color: #a7b2cf;
 }
 .about-container ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(autofill, minmax(300px, 1fr));
   margin: 40px;
 }
 .about-container ul li {
   position: relative;
-  flex-basis: 40%;
+  margin-top: 10px;
   list-style: none;
+  padding: 12px;
+
+}
+@media only screen and (max-width: 600px){
+
 }
 .about-container ul li::before {
   content: "";
@@ -40,8 +44,9 @@
   height: 5px;
   position: absolute;
   border-radius: 50%;
-  left: -15px;
-  top: 6px;
+  left: 0;
+  top: 50%;
+  margin-top: -2.5px;
   background-color: #5ef0cf;
 }
 @media only screen and (min-width: 738px) {
@@ -67,8 +72,5 @@
   
     line-height: 1.8;
     margin-bottom: 20px;
-  }
-  h3{
-    
   }
 }
