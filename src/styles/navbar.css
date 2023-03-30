@@ -28,6 +28,13 @@
 .navbar-content li {
   color: #a7b2cf;
 }
+.navbar-content button{
+  
+  cursor: pointer;
+}
+.navbar-content button a {
+  color: #a7b2cf;
+}
 .m-icon {
   font-size: 36px;
   margin: 10px;

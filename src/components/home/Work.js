@@ -28,8 +28,8 @@ const Work = () => {
                 </a>
               </div>
             </div>
-            <div className="content-parent">
               <h3 className="content-heading">Makeup Store</h3>
+            <div className="content-parent">
               <p className="content-p">
                 Online catalog for makeup. It consumes an online API that
                 provide details about makeup categories and products.

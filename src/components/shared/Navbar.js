@@ -39,15 +39,22 @@ const Navbar = () => {
         </div>
         <div className="navbar-elements">
           <ol>
-            
-            <li> <a href="#about">About </a></li>
-            
+            <li>
+              {" "}
+              <a href="#about">About </a>
+            </li>
+
             <li>Experience</li>
             <a href="#work">
               <li>Work</li>
             </a>
             <li>Contact</li>
-            <button>Resume</button>
+            <a
+              href="https://docs.google.com/document/d/1Tflv3V45Y2Qh-iBjI84gM-97kG6AkkTX7qaOmE6HlJk/edit?usp=sharing"
+              target="_blank" rel="noreferrer"
+            >
+              <button>Resume</button>
+            </a>
           </ol>
         </div>
         <BsListNested className="list-icon" />

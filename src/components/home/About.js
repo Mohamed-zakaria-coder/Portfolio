@@ -15,7 +15,7 @@ const About = () => {
       <h2 className="about-heading">About Me</h2>
       <div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ipsum quidem mollitia dicta, est explicabo quia. Repudiandae, omnis suscipit corrupti ut unde reiciendis iste nostrum exercitationem. Quia quidem eveniet eaque.
+      My Name Is Mohamed Zakaria, I'm Twenty-Four Years old, I graduated from commerce university in June 2020
         </p>
       </div>
       <h3>I'm Working With</h3>
@@ -27,7 +27,6 @@ const About = () => {
           <li data-aos="fade-left">React</li>
         </ul>
       </div>
-      <img src="" alt="" />
     </div>
   );
 };
