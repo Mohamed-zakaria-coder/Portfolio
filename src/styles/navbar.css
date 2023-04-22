@@ -50,22 +50,26 @@
 .img-logo-parent {
   background-color: transparent;
 }
-@media only screen and (min-width: 738px) {
+.navbar-elements{
+  display: flex;
+  align-items: center;
+}
+.navbar-elements button {
+  color: #5ef0cf;
+  border: 1px solid #5ef0cf;
+  padding: 10px 15px;
+  background-color: transparent;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+.navbar-elements button:hover {
+  background-color: rgba(255, 255, 255, 0.068);
+}
   .list-icon {
     display: none;
   }
-  ol button {
-    color: #5ef0cf;
-    border: 1px solid #5ef0cf;
-    padding: 10px 15px;
-    background-color: transparent;
-    border-radius: 5px;
-    margin-left: 20px;
-    margin-right: 25px;
-  }
-  ol button:hover {
-    background-color: rgba(255, 255, 255, 0.068);
-  }
+  
   .m-icon {
     margin-left: 20px;
   }
@@ -75,11 +79,18 @@
   .intro-container {
     padding: 40px 80px;
   }
-  .navbar-elements ol {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #a7b2cf;
+  .navbar-content{
+    position: relative;
+    
+  }
+  @media(min-width: 738px){
+    .navbar-elements ol {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #a7b2cf;
+    }
+
   }
   .navbar-elements ol li {
     margin-left: 20px;
@@ -93,14 +104,37 @@
     color: #5ef0cf;
     margin-right: 5px;
   }
-  .navbar-elements ol li:hover {
+  .navbar-elements ol li:hover a {
     color: #5ef0cf;
     cursor: pointer;
   }
-}
+
 @media only screen and (max-width: 738px) {
-  .navbar-elements {
+  .navbar-elements ol{
+    position: absolute;
+    top: calc(100% + 20px);
+    background-color: rgb(0, 0, 0);
+    list-style: none;
+    right: 10px;
+    z-index: 1000;
     display: none;
+  }
+  ol::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent black transparent;
+  }
+  .navbar-elements ol li{
+    padding: 10px;
+    margin-left: 5px;
+  }
+  
+  .navbar-elements ol li:not(:last-of-type){
+    border-bottom: 1px solid #ddd;
   }
   .list-icon {
     display: block;

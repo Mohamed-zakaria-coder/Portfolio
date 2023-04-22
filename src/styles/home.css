@@ -5,6 +5,11 @@
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
+/* * { border: 1px solid red !important; }
+ */
+.home{
+/* overflow: hidden; */
+}
 a:visited{
   color: #a7b2cf;
 }

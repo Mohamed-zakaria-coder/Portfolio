@@ -5,11 +5,46 @@ import { motion } from "framer-motion";
 import "../../styles/navbar.css";
 const Navbar = () => {
   const [hState, sethState] = useState("top");
+  let ol =
+    document.querySelector(".navbar-elements ol") &&
+    document.querySelector(".navbar-elements ol");
+  let lis =
+    document.querySelectorAll(".navbar-elements ol li") &&
+    document.querySelectorAll(".navbar-elements ol li");
+  window.onresize = function () {
+    if (ol && window.innerWidth > 738) {
+      ol.style.display = "flex";
+    } else if (ol && window.innerWidth < 738) {
+      ol.style.display = "none";
+    }
+  };
 
+  function showLinks() {
+    if (ol && ol.style.display !== "block" && window.innerWidth < 738) {
+      return (ol.style.display = "block");
+    } else if (ol && ol.style.display !== "none" && window.innerWidth < 738) {
+      return (ol.style.display = "none");
+    }
+  }
+  if(window.innerWidth < 738){
+    lis.forEach((li) => {
+      li.addEventListener("click", function () {
+        li.classList.add("clicked");
+        if (li.classList.contains("clicked")) {
+          return (ol.style.display = "none");
+        }
+        lis.forEach((li) => li.classList.remove("clicked"));
+      });
+    });
+  }
   useEffect(() => {
+    sethState("up"); //  => solved null ol problem
     var lastVal = 0;
+
     window.onscroll = function () {
       let y = window.scrollY;
+      if (window.innerWidth < 738) {
+      }
       if (y > lastVal) {
         sethState("down");
       }
@@ -18,6 +53,13 @@ const Navbar = () => {
       }
       if (y === 0) {
         sethState("top");
+      }
+      if (
+        ol &&
+        window.innerWidth < 738 &&
+        ol.parentElement.parentElement.parentElement.classList.contains("down")
+      ) {
+        ol.style.display = "none";
       }
       lastVal = y;
     };
@@ -43,21 +85,25 @@ const Navbar = () => {
               {" "}
               <a href="#about">About </a>
             </li>
-
-            <li>Experience</li>
-            <a href="#work">
-              <li>Work</li>
+            <a href="#contact">
+              <li>Contact</li>
             </a>
-            <li>Contact</li>
-            <a
-              href="https://docs.google.com/document/d/1Tflv3V45Y2Qh-iBjI84gM-97kG6AkkTX7qaOmE6HlJk/edit?usp=sharing"
-              target="_blank" rel="noreferrer"
-            >
-              <button>Resume</button>
+            <a href="#work">
+              <li>Projects</li>
+            </a>
+            <a href="#other-projects">
+              <li>Other Projects</li>
             </a>
           </ol>
+          <a
+            href="https://docs.google.com/document/d/1Tflv3V45Y2Qh-iBjI84gM-97kG6AkkTX7qaOmE6HlJk/edit?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button>Resume</button>
+          </a>
+          <BsListNested className="list-icon" onClick={showLinks} />
         </div>
-        <BsListNested className="list-icon" />
       </div>
     </motion.div>
   );

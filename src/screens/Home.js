@@ -5,6 +5,8 @@ import About from "../components/home/About";
 import Work from "../components/home/Work";
 import Loading from "../components/home/Loading";
 import Aside from "../components/home/Aside";
+import Contact from "../components/home/Contact"
+import OtherProjects from "../components/home/OtherProjects";
 import Footer from "../components/shared/Footer";
 import "../styles/home.css";
 export default function Home() {
@@ -33,13 +35,15 @@ export default function Home() {
   return (
     <div className = "home">
       {isLoading && <Loading />}
-      {isLoading == false && (
+      {isLoading === false && (
         <>
           <Navbar />
           <Aside />
           <Introduction />
           <About />
           <Work />
+          <Contact /> 
+          <OtherProjects />
           <Footer />
         </>
       )}

@@ -1,0 +1,69 @@
+.other-parent{
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+.other-parent h2{
+    color: #a7b2cf;
+    text-align: center;
+    padding: 30px 0;
+}
+.other-parent .other-cards-parent{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.other-parent .other-cards-parent .other-card{
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.397);
+    color: white;
+    box-shadow: 0 0 2px #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media(max-width: 738px){
+    .other-parent .other-cards-parent .other-card{
+        width: 80%;
+    }
+}
+.other-parent .img-parent{
+    max-width: 100%;
+}
+.other-parent .img-parent img{
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+.other-parent .img-parent img:hover{
+    filter: grayscale(0);
+
+}
+.other-parent .card-content{
+    padding: 10px;
+}
+.other-parent h3{
+    text-align: center;
+    padding: 15px 0;
+    transition: 0.5s;   
+}
+.other-parent .other-cards-parent .other-card:hover h3{
+    color: #5ef0cf;
+}
+.other-parent p{
+    line-height: 1.2;
+    color: #777;
+    text-align: center;
+}
+.other-parent .icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10px 10px 5px;
+}
+.other-parent .question:hover .card-content h3{
+    color: #faa792;
+}

@@ -21,10 +21,14 @@ const About = () => {
       <h3>I'm Working With</h3>
       <div className="list-parent">
         <ul >
-          <li data-aos="fade-right">Html</li>
-          <li data-aos="fade-left">Css</li>
+          <li data-aos="fade-right">HTML</li>
+          <li data-aos="fade-left">CSS</li>
           <li data-aos="fade-right">JavaScript (ES6+)</li>
           <li data-aos="fade-left">React</li>
+          <li data-aos="fade-right">Bootstrap</li>
+          <li data-aos="fade-left">Git</li>
+          <li data-aos="fade-right">Github</li>
+          <li data-aos="fade-left">Netlify</li>
         </ul>
       </div>
     </div>
