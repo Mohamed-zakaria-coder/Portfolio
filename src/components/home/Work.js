@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FiFolder } from "react-icons/fi";
+import { BiLinkExternal } from "react-icons/bi";
 import { SiNetlify } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 
@@ -16,29 +16,28 @@ const Work = () => {
     <div className="work-parent" id="work">
       <h2 className="work-heading">Projects</h2>
       <div className="cards-parent">
-        {/* <a href="https://mohamed-zakaria-coder.github.io/Makeup-Project/" target="_blank" rel="noreferrer">
-        </a> */}
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
-            <div className="head-parent">
-              <FiFolder className="folder-icon" />
-              <div>
-                <a
-                  href="https://mohamed-zakaria-coder.github.io/dashboard/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiFillGithub className="github" />
-                </a>
-                {/* <a
-                  href=""
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <SiNetlify className="netlify" />
-                </a> */}
-              </div>
+            <div className="img-parent">
+              <img src={require("../../Images/choong-deng-xiang--WXQm_NTK0U-unsplash.jpg")} alt="" />
             </div>
+            <div className="icons">
+            <a
+              href="https://github.com/Mohamed-zakaria-coder/dashboard"
+              
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGithub className="github" />
+            </a>
+            <a
+              href="https://mohamed-zakaria-coder.github.io/dashboard/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BiLinkExternal className="folder-icon" />
+            </a>
+          </div>
             <h3 className="content-heading">Dashboard</h3>
             <div className="content-parent">
               <p className="content-p">
@@ -47,95 +46,93 @@ const Work = () => {
               </p>
             </div>
           </div>
-          <footer>
-            <ul>
-              <li>Css</li>
-              <li>React</li>
-              {/* <li>Github</li> */}
-            </ul>
-          </footer>
+
+          
+          <div className="techs">
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>GIT</li>
+          </ul>
+          </div>
         </div>
-        {/* <a href="https://mohamed-zakaria-coder.github.io/Cashier/" target="_blank" rel="noreferrer">
-          </a> */}
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
-            <div className="head-parent">
-              <FiFolder className="folder-icon" />
-              <div>
-                <a
-                  href="https://mohamed-zakaria-coder.github.io/Cashier/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiFillGithub className="github" />
-                </a>
-                <a
-                  href="https://sunny-frangollo-ff5b96.netlify.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <SiNetlify className="netlify" />
-                </a>
-              </div>
+            <div className="img-parent">
+              <img src="https://cdn.pixabay.com/photo/2020/01/20/00/08/pizza-4779230__340.jpg" alt="" />
             </div>
+            <div className="icons">
+            <a
+              href="https://github.com/Mohamed-zakaria-coder/Cashier"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGithub className="github" />
+            </a>
+            <a
+              href="https://mohamed-zakaria-coder.github.io/Cashier/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BiLinkExternal className="folder-icon" />
+            </a>
+          </div>
+            <h3 className="content-heading">Cashier</h3>
             <div className="content-parent">
-              <h3 className="content-heading">Cashier</h3>
               <p className="content-p">
-                A web based cashier app. It enables users to store and track
+                A web-based cashier app. It enables users to store and track
                 their sales and give them some statistics and charts about their
-                performance such as total earnings.
-                {/* , month earnings, top sold
-                products, and most profitable products. Local storage was used
-                to handle data. */}
+                performance
               </p>
             </div>
           </div>
-          <footer>
-            <ul>
-              <li>Css</li>
-              <li>React</li>
-              {/* <li>Github</li> */}
-            </ul>
-          </footer>
+
+          
+          <div className="techs">
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>React</li>
+          </ul>
+          </div>
         </div>
-        {/* <a href="https://mohamed-zakaria-coder.github.io/landing-page/" target="_blank" rel="noreferrer">
-          </a> */}
+
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
-            <div className="head-parent">
-              <FiFolder className="folder-icon" />
-              <div>
-                <a
-                  href="https://mohamed-zakaria-coder.github.io/landing-page/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiFillGithub className="github" />
-                </a>
-                {/* <a
-                  href="https://634d4da02fd43224d47ff848--beautiful-meerkat-7c34a1.netlify.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <SiNetlify className="netlify" />
-                </a> */}
-              </div>
+            <div className="img-parent">
+              <img src="https://images.pexels.com/photos/7319129/pexels-photo-7319129.jpeg?auto=compress&cs=tinysrgb&w=400" alt="product-img" />
+            
             </div>
+            <div className="icons">
+            <a
+              href="https://github.com/Mohamed-zakaria-coder/landing-page"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGithub className="github" />
+            </a>
+            <a href="https://mohamed-zakaria-coder.github.io/landing-page/" target="_blank"
+              rel="noreferrer">
+            <BiLinkExternal className="folder-icon" />
+            </a>
+          </div>
+            <h3 className="content-heading">Landing-Page</h3>
             <div className="content-parent">
-              <h3 className="content-heading">Landing Page</h3>
               <p className="content-p">
-                A Store For Selling Best Hair Products For The Health Of Your
-                Hair And It Provides A Natural Products
+                A Store For Selling the Best Hair Products For The Health Of
+                Your Hair And It Provides Natural Products
               </p>
             </div>
           </div>
-          <footer>
-            <ul>
-              <li>Css</li>
-              <li>React</li>
-              {/* <li>Github</li> */}
-            </ul>
-          </footer>
+
+          
+          <div className="techs">
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>React</li>
+          </ul>
+          </div>
         </div>
       </div>
     </div>

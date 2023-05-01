@@ -1,5 +1,6 @@
 .intro-container {
   text-align: center;
+  padding: 40px 20px;
 }
 
 .intro-heading {
@@ -7,7 +8,7 @@
   margin-top: 50px;
 }
 .headings-parent{
-  padding: 0 30px;
+  padding: 0 10px;
 
 }
 .intro-description {
@@ -20,7 +21,7 @@
   margin-top: 20px;
   line-height: 2;
   font-weight: 600;
-  padding: 30px;
+  padding: 10px
 }
 
 .intro-icons-parent {
@@ -35,13 +36,17 @@
   margin-left: 20px;
 }
 @media only screen and (min-width: 738px) {
-  .intro-container{
-    padding-left: 50px;
+  .intro-container {
+    text-align: center;
+    padding: 40px 80px;
   }
   .intro-icons-parent {
     display: none;
   }
-
+  .headings-parent{
+    padding: 0 30px;
+  
+  }
   .intro-heading {
     font-size: 50px;
   }
@@ -50,6 +55,6 @@
     
   }
   .intro-p {
-    
+    padding: 30px;
   }
 }

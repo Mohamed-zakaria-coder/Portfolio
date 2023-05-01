@@ -85,11 +85,11 @@ const Navbar = () => {
               {" "}
               <a href="#about">About </a>
             </li>
-            <a href="#contact">
-              <li>Contact</li>
-            </a>
             <a href="#work">
               <li>Projects</li>
+            </a>
+            <a href="#contact">
+              <li>Contact</li>
             </a>
             <a href="#other-projects">
               <li>Other Projects</li>

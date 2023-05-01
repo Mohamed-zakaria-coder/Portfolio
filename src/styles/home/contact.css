@@ -8,6 +8,11 @@
     color: #ccd6f6;
     font-size: 30px;
 }
+.contact-parent h2::before {
+    content: "03.";
+    color: #5ef0cf;
+    margin-right: 8px;
+    }
 
 .contact-parent form {
     display: flex;

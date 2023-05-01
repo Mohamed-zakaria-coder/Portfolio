@@ -8,6 +8,11 @@
     text-align: center;
     padding: 30px 0;
 }
+.other-parent h2::before {
+    content: "04.";
+    color: #5ef0cf;
+    margin-right: 8px;
+    }
 .other-parent .other-cards-parent{
     display: flex;
     flex-wrap: wrap;
@@ -41,6 +46,10 @@
 .other-parent .img-parent img:hover{
     filter: grayscale(0);
 
+}
+.other-parent .question .folder-icon:hover,
+.other-parent .question .github:hover{
+    color:#faa792;
 }
 .other-parent .card-content{
     padding: 10px;

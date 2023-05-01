@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/home/other-projects.css";
 import { AiFillGithub } from "react-icons/ai";
-import { FiFolder } from "react-icons/fi";
+import { BiLinkExternal } from "react-icons/bi";
 
 const OtherProjects = () => {
   return (
@@ -30,7 +30,7 @@ const OtherProjects = () => {
               >
                 <AiFillGithub className="github" />
               </a>
-              <FiFolder className="folder-icon" />
+              <BiLinkExternal className="folder-icon" />
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const OtherProjects = () => {
               >
                 <AiFillGithub className="github" />
               </a>
-              <FiFolder className="folder-icon" />
+              <BiLinkExternal className="folder-icon" />
             </div>
           </div>
         </div>

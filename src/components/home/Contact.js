@@ -43,12 +43,13 @@ export default function Contact() {
           type="text"
           placeholder="Enter Your Name"
           minLength="3"
-          maxLength="25"
+          maxLength="50"
           required
         />
         <input
           name="email"
           type="email"
+          maxLength="90"
           placeholder="Enter Your Email"
           required
         />
@@ -58,7 +59,7 @@ export default function Contact() {
           rows="10"
           placeholder="Enter Your Message"
           minLength="4"
-          maxLength="100"
+          maxLength="850"
           required
         ></textarea>
         <input type="submit" />
