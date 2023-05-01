@@ -69,7 +69,8 @@ const Work = () => {
             >
               <AiFillGithub className="github" />
             </a>
-            <a>
+            <a href="https://cashier-services.netlify.app/" target="_blank"
+              rel="noreferrer">
             <SiNetlify className = "netlify"/>
             </a>
             <a
