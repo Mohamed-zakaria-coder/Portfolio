@@ -69,6 +69,9 @@ const Work = () => {
             >
               <AiFillGithub className="github" />
             </a>
+            <a>
+            <SiNetlify className = "netlify"/>
+            </a>
             <a
               href="https://mohamed-zakaria-coder.github.io/Cashier/"
               target="_blank"
