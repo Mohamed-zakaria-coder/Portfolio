@@ -10,6 +10,16 @@
   margin-bottom: 50px;
   font-size: 30px;
 }
+.about-container .about-p{
+  line-height: 1.4;
+  text-align: center;
+}
+@media(max-width:767px){
+  .about-container .about-p{
+    text-align: left;
+  }
+
+}
 .about-container h3{
   color: white;
   padding-top: 40px;

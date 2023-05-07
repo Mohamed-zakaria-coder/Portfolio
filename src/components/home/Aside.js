@@ -9,9 +9,21 @@ const Aside = () => {
   return (
     <div className="aside-container">
       <div className="left-sec">
-        <a href="https://github.com/Mohamed-zakaria-coder" target="_blank" rel="noreferrer"><AiFillGithub className="icon" /></a>
-        <FiLinkedin className="icon" />
-        <ImCodepen className="icon" />
+        <a
+          href="https://github.com/Mohamed-zakaria-coder"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AiFillGithub className="icon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/mohamed-zakaria-b75750275/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FiLinkedin className="icon" />
+        </a>
+        {/* <ImCodepen className="icon" /> */}
       </div>
       <div className="right-sec">
         <a href="#">www.Mz.com</a>

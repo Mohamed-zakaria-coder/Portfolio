@@ -13,6 +13,10 @@
   margin-top: 20px;
   font-size: 24px;
   padding: 2px;
+  transition: 0.5s color;
+}
+.aside-container .icon:hover{
+  color: #5ef0cf;
 }
 .right-sec a {
   color: #6f7a96;

@@ -26,7 +26,7 @@ const Navbar = () => {
       return (ol.style.display = "none");
     }
   }
-  if(window.innerWidth < 738){
+  if (window.innerWidth < 738) {
     lis.forEach((li) => {
       li.addEventListener("click", function () {
         li.classList.add("clicked");
@@ -81,12 +81,11 @@ const Navbar = () => {
         </div>
         <div className="navbar-elements">
           <ol>
-            <li>
-              {" "}
-              <a href="#about">About </a>
-            </li>
+            <a href="#about">
+              <li> About</li>
+            </a>
             <a href="#work">
-              <li>Projects</li>
+              <li>Projects </li>
             </a>
             <a href="#contact">
               <li>Contact</li>
