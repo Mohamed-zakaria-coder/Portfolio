@@ -12,6 +12,7 @@ const Introduction = () => {
       </div>
       <p className="intro-p">
         A Front-End Developer, I Enjoy Developing New Things For The Web.
+        {/* Welcome to my portfolio! As a web developer, I understand the importance of having a strong online presence. This portfolio showcases some of my best work and highlights my skills and experience in web development. */}
       </p>
       <div className="intro-icons-parent">
       <a
