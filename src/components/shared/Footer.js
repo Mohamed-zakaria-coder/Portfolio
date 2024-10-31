@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer">
         <div className="m-logo-footer">
-          <a href="/">
+          <a href="/Portfolio/">
             <TbLetterM className="m-icon-footer" />
           </a>
         </div>
