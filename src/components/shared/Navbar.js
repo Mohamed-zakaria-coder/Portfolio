@@ -75,7 +75,7 @@ const Navbar = () => {
     >
       <div className="navbar-content">
         <div className="img-logo-parent">
-          <a href="http://localhost:3000/">
+          <a href="/">
             <TbLetterM className="m-icon" />
           </a>
         </div>

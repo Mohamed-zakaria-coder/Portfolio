@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="footer">
         <div className="m-logo-footer">
-          <a href="http://localhost:3000/">
+          <a href="/">
             <TbLetterM className="m-icon-footer" />
           </a>
         </div>
