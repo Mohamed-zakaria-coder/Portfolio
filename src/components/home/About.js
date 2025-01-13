@@ -32,6 +32,8 @@ const About = () => {
           <li data-aos="fade-left">Git</li>
           <li data-aos="fade-right">Github</li>
           <li data-aos="fade-left">Netlify</li>
+          <li data-aos="fade-right">Next.js</li>
+          <li data-aos="fade-left">Tailwind CSS</li>
         </ul>
       </div>
     </div>
