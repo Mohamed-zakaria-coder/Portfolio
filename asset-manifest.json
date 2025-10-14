@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.313146ff.css",
-    "main.js": "./static/js/main.9fa828e5.js",
+    "main.css": "./static/css/main.0489b9a3.css",
+    "main.js": "./static/js/main.2dbe817f.js",
     "static/media/choong-deng-xiang--WXQm_NTK0U-unsplash.jpg": "./static/media/choong-deng-xiang--WXQm_NTK0U-unsplash.5c3cee68dda81a666854.jpg",
+    "static/media/keyboard-7913431_1280.jpg": "./static/media/keyboard-7913431_1280.c607dc64934f6431864f.jpg",
     "index.html": "./index.html",
-    "main.313146ff.css.map": "./static/css/main.313146ff.css.map",
-    "main.9fa828e5.js.map": "./static/js/main.9fa828e5.js.map"
+    "main.0489b9a3.css.map": "./static/css/main.0489b9a3.css.map",
+    "main.2dbe817f.js.map": "./static/js/main.2dbe817f.js.map"
   },
   "entrypoints": [
-    "static/css/main.313146ff.css",
-    "static/js/main.9fa828e5.js"
+    "static/css/main.0489b9a3.css",
+    "static/js/main.2dbe817f.js"
   ]
 }
