@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/home/other-projects.css";
 import { AiFillGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
-
+import keyboard from "../../Images/keyboard-7913431_1280.jpg";
 const OtherProjects = () => {
   return (
     <div className="other-parent" id="other-projects">
@@ -12,27 +12,26 @@ const OtherProjects = () => {
           <div>
             <div className="img-parent">
               <img
-                src="https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?auto=compress&cs=tinysrgb&w=400"
-                alt="mobile-img"
+                src={keyboard}
+                alt="keyboard img"
               />
             </div>
             <div className="card-content">
-              <h3>Mobile Store</h3>
+              <h3>Typing Speed</h3>
               <p>
-                A Store For Selling Mobiles With Different Products To Choose
-                The Products You Want
+                A typing game built to help users improve their typing speed and accuracy
               </p>
             </div>
             <div className="icons">
               <a
-                href="https://github.com/Mohamed-zakaria-coder/mobile-store"
+                href="https://github.com/Mohamed-zakaria-coder/typing-speed"
                 target="_blank"
                 rel="noreferrer"
               >
                 <AiFillGithub className="github" />
               </a>
               <a
-                href="https://mohamed-zakaria-coder.github.io/mobile-store/"
+                href="https://mohamed-zakaria-coder.github.io/typing-speed/"
                 target="_blank"
                 rel="noreferrer"
               >
