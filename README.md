@@ -25,7 +25,7 @@ Designed for smooth animations, simple navigation, and a professional presentati
 |-----------|-------------------|-------------|
 | ⚛️ React.js | ✨ Framer Motion | 🌐 GitHub Pages |
 | 💅 CSS3 | 📩 EmailJS | 🔄 Netlify (for some projects) |
-| 🖼️ AOS Animation | 🔤 React Icons |  |
+| 🖼️ AOS Animation | 🔤 React Icons | Vercel (for some projects) |
 
 ## 🧠 About the Project
 This portfolio was created to showcase my front-end development work, highlight key projects, and provide a simple way for visitors to learn more about me.  
