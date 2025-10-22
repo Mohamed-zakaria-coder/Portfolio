@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import { SiNetlify } from "react-icons/si";
+import { SiNetlify, SiVercel } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
+import coffeeImage from "../../Images/main-image.png";
 
 import "../../styles/home/work.css";
 import "aos/dist/aos.css";
@@ -19,25 +20,27 @@ const Work = () => {
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
             <div className="img-parent">
-              <img src={require("../../Images/choong-deng-xiang--WXQm_NTK0U-unsplash.jpg")} alt="" />
+              <img
+                src={require("../../Images/choong-deng-xiang--WXQm_NTK0U-unsplash.jpg")}
+                alt=""
+              />
             </div>
             <div className="icons">
-            <a
-              href="https://github.com/Mohamed-zakaria-coder/dashboard"
-              
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillGithub className="github" />
-            </a>
-            <a
-              href="https://mohamed-zakaria-coder.github.io/dashboard/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <BiLinkExternal className="folder-icon" />
-            </a>
-          </div>
+              <a
+                href="https://github.com/Mohamed-zakaria-coder/dashboard"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillGithub className="github" />
+              </a>
+              <a
+                href="https://mohamed-zakaria-coder.github.io/dashboard/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BiLinkExternal className="folder-icon" />
+              </a>
+            </div>
             <h3 className="content-heading">Dashboard</h3>
             <div className="content-parent">
               <p className="content-p">
@@ -47,79 +50,81 @@ const Work = () => {
             </div>
           </div>
 
-          
           <div className="techs">
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>GIT</li>
-          </ul>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>GIT</li>
+            </ul>
           </div>
         </div>
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
             <div className="img-parent">
-              <img src="https://cdn.pixabay.com/photo/2020/01/20/00/08/pizza-4779230__340.jpg" alt="" />
+              <img src={coffeeImage} alt="coffee site" />
             </div>
             <div className="icons">
-            <a
-              href="https://github.com/Mohamed-zakaria-coder/Cashier"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillGithub className="github" />
-            </a>
-            <a href="https://cashier-services.netlify.app/" target="_blank"
-              rel="noreferrer">
-            <SiNetlify className = "netlify"/>
-            </a>
-            <a
-              href="https://mohamed-zakaria-coder.github.io/Cashier/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <BiLinkExternal className="folder-icon" />
-            </a>
-          </div>
-            <h3 className="content-heading">Cashier</h3>
+              <a
+                href="https://coffee-landing-zeta.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="View on Vercel"
+              >
+                <SiVercel className="vercel" />
+              </a>
+              <a
+                href="https://coffee-landing-zeta.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open live demo"
+              >
+                <BiLinkExternal className="folder-icon" />
+              </a>
+            </div>
+
+            <h3 className="content-heading">Coffee Landing</h3>
             <div className="content-parent">
               <p className="content-p">
-                A web-based cashier app. It enables users to store and track
-                their sales and give them some statistics and charts about their
-                performance
+                A clean, responsive, and modern landing page template built with
+                Next.js, TypeScript, and Tailwind CSS. Perfect for coffee shops
+                and cafés.
               </p>
             </div>
           </div>
 
-          
           <div className="techs">
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>React</li>
-          </ul>
+            <ul>
+              <li>Next</li>
+              <li>Tailwind</li>
+              <li>Ts</li>
+            </ul>
           </div>
         </div>
 
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
             <div className="img-parent">
-              <img src="https://images.pexels.com/photos/7319129/pexels-photo-7319129.jpeg?auto=compress&cs=tinysrgb&w=400" alt="product-img" />
-            
+              <img
+                src="https://images.pexels.com/photos/7319129/pexels-photo-7319129.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="product-img"
+              />
             </div>
             <div className="icons">
-            <a
-              href="https://github.com/Mohamed-zakaria-coder/landing-page"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillGithub className="github" />
-            </a>
-            <a href="https://mohamed-zakaria-coder.github.io/landing-page/" target="_blank"
-              rel="noreferrer">
-            <BiLinkExternal className="folder-icon" />
-            </a>
-          </div>
+              <a
+                href="https://github.com/Mohamed-zakaria-coder/landing-page"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillGithub className="github" />
+              </a>
+              <a
+                href="https://mohamed-zakaria-coder.github.io/landing-page/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BiLinkExternal className="folder-icon" />
+              </a>
+            </div>
             <h3 className="content-heading">Landing-Page</h3>
             <div className="content-parent">
               <p className="content-p">
@@ -129,13 +134,12 @@ const Work = () => {
             </div>
           </div>
 
-          
           <div className="techs">
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>React</li>
-          </ul>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>React</li>
+            </ul>
           </div>
         </div>
       </div>
