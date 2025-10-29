@@ -3,6 +3,8 @@ import { BiLinkExternal } from "react-icons/bi";
 import { SiNetlify, SiVercel } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 import coffeeImage from "../../Images/main-image.png";
+import adsMaster from "../../Images/ads-master.png";
+import { FaStar } from "react-icons/fa";
 
 import "../../styles/home/work.css";
 import "aos/dist/aos.css";
@@ -20,40 +22,38 @@ const Work = () => {
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
             <div className="img-parent">
-              <img
-                src={require("../../Images/choong-deng-xiang--WXQm_NTK0U-unsplash.jpg")}
-                alt=""
-              />
+              <img src={adsMaster} alt="" />
             </div>
             <div className="icons">
-              <a
-                href="https://github.com/Mohamed-zakaria-coder/dashboard"
+              {/* <a
+                href="https://landing-beta-dusky.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
-              >
-                <AiFillGithub className="github" />
-              </a>
+              > */}
+              <FaStar className="premium" />
+              {/* </a> */}
               <a
-                href="https://mohamed-zakaria-coder.github.io/dashboard/"
+                href="https://landing-beta-dusky.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <BiLinkExternal className="folder-icon" />
               </a>
             </div>
-            <h3 className="content-heading">Dashboard</h3>
+            <h3 className="content-heading">Ads Master</h3>
             <div className="content-parent">
               <p className="content-p">
-                A Multi Page Application Dashboard Made By Html And CSS, It
-                Contains 9 Pages
+                Responsive React landing page built with JSX and Tailwind CSS,
+                featuring smooth animations (Framer Motion/AOS) and
+                EmailJS/Firebase contact integration
               </p>
             </div>
           </div>
 
           <div className="techs">
             <ul>
-              <li>HTML</li>
-              <li>CSS</li>
+              <li>React</li>
+              <li>Tailwind</li>
               <li>GIT</li>
             </ul>
           </div>
@@ -64,14 +64,8 @@ const Work = () => {
               <img src={coffeeImage} alt="coffee site" />
             </div>
             <div className="icons">
-              <a
-                href="https://coffee-landing-zeta.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="View on Vercel"
-              >
-                <SiVercel className="vercel" />
-              </a>
+              <FaStar className="premium" />
+
               <a
                 href="https://coffee-landing-zeta.vercel.app/"
                 target="_blank"

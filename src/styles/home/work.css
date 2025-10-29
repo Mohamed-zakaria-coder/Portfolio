@@ -105,7 +105,8 @@ a:visited {
 .heroku,
 .netlify,
 .vercel,
-.github {
+.github,
+.premium {
   color: #a8b2d1;
   margin: 2px 5px;
   font-size: 25px;
@@ -113,7 +114,8 @@ a:visited {
 .heroku:hover,
 .netlify:hover,
 .vercel:hover,
-.github:hover {
+.github:hover,
+.premium:hover {
   color: #5ef0cf;
 }
 .folder-icon {
