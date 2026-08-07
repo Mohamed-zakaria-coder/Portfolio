@@ -8,13 +8,16 @@ export default function Loading() {
       <motion.div
         initial={{
           opacity: 0,
+          scale: 0.75,
         }}
         animate={{
           opacity: 1,
+          scale: 1,
         }}
         transition={{
-          duration: 2,
-          delay: 0.5,
+          duration: 1.8,
+          delay: 0.3,
+          ease: "easeOut",
         }}
       >
         <TbLetterM className="m-icon-loading" />
