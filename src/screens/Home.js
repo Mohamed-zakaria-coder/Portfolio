@@ -3,50 +3,52 @@ import Navbar from "../components/shared/Navbar";
 import Introduction from "../components/home/Introduction";
 import About from "../components/home/About";
 import Work from "../components/home/Work";
+import OtherProjects from "../components/home/OtherProjects";
+import Contact from "../components/home/Contact";
 import Loading from "../components/home/Loading";
 import Aside from "../components/home/Aside";
-import Contact from "../components/home/Contact"
-import OtherProjects from "../components/home/OtherProjects";
 import Footer from "../components/shared/Footer";
 import "../styles/home.css";
+
 export default function Home() {
-  const [prevPosition, setPrevPosition] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
 
+  // Initial loader timer
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      setPrevPosition(scrollPosition);
-    };
-  }, []);
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, []);
-  const [isLoading, setIsLoading] = useState(false);
+
+  // Track scroll position cleanly
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <div className = "home">
-      {isLoading && <Loading />}
-      {isLoading === false && (
-        <>
-          <Navbar />
-          <Aside />
-          <Introduction />
-          <About />
-          <Work />
-          <Contact /> 
-          <OtherProjects />
-          <Footer />
-        </>
-      )}
+    <div className="home">
+      <Navbar scrollPosition={scrollPosition} />
+      <Aside />
+      <main id="main-content">
+        <Introduction />
+        <About />
+        <Work />
+        <OtherProjects />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

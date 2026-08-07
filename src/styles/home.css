@@ -1,38 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Set Fira Code as your main global font */
+  --font-mono: 'Fira Code', monospace;
+  
+  /* Color Palette */
+  --bg-primary: #0a192f;
+  --bg-secondary: #112240;
+  --text-primary: #ccd6f6;
+  --text-secondary: #8892b0;
+  --accent-cyan: #64ffda;
+  --accent-cyan-tint: rgba(100, 255, 218, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
   scroll-behavior: smooth;
 }
-/* * { border: 1px solid red !important; }
- */
-.home{
-/* overflow: hidden; */
+
+/* Apply Fira Code globally to the whole page */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono) !important; /* Force Fira Code everywhere */
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
-a:visited{
-  color: #a7b2cf;
+
+/* Ensure headings, links, inputs, and buttons also use Fira Code */
+h1, h2, h3, h4, h5, h6, p, a, button, span, li, input {
+  font-family: var(--font-mono) !important;
 }
-a:hover{
-  color: #5ef0cf;
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease-in-out;
 }
-.container {
-  background-color: #0a192f;
-  
+
+a:hover {
+  color: var(--accent-cyan);
 }
-/* Start Scrollbar */
+
+/* 5. Monospace Typography Utility Classes */
+/* Use these classes on any element you want in Fira Code */
+.font-mono,
+.nav-link,
+.section-number,
+.tech-tag,
+.btn-primary,
+.btn-outline,
+code {
+  font-family: var(--font-mono);
+}
+
+/* 6. Styled Buttons with Fira Code */
+.btn-outline {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  background-color: transparent;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-cyan-tint);
+  transform: translateY(-2px);
+}
+
+/* 7. Modern Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 11px;
+  width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background-color: #0a192f;
-  border-radius: 15px;
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 10px 5px 10px 10px #5b6274;
-  border: solid 3px #0a192f;
-  border-radius: 15px;
-  background-color: #0a192f;
+  background: #1e2d4a;
+  border-radius: 4px;
 }
-/* End Scrollbar */
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
