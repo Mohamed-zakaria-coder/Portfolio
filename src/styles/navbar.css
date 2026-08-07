@@ -141,6 +141,7 @@
     display: block;
     color: #5ef0cf;
     font-size: 30px;
+    cursor: pointer;
   }
 }
 @keyframes navOpacity {

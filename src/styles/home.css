@@ -3,7 +3,7 @@
 :root {
   /* Set Fira Code as your main global font */
   --font-mono: 'Fira Code', monospace;
-  
+
   /* Color Palette */
   --bg-primary: #0a192f;
   --bg-secondary: #112240;
@@ -11,6 +11,7 @@
   --text-secondary: #8892b0;
   --accent-cyan: #64ffda;
   --accent-cyan-tint: rgba(100, 255, 218, 0.1);
+
 }
 
 * {
@@ -27,14 +28,26 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-mono) !important; /* Force Fira Code everywhere */
+  font-family: var(--font-mono) !important;
+  /* Force Fira Code everywhere */
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Ensure headings, links, inputs, and buttons also use Fira Code */
-h1, h2, h3, h4, h5, h6, p, a, button, span, li, input {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+span,
+li,
+input {
   font-family: var(--font-mono) !important;
 }
 
