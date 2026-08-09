@@ -27,14 +27,19 @@
 .cards-parent {
   padding: 50px;
   display: grid;
+  gap: 25px;
 }
 @media (min-width: 768px) {
   .cards-parent {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
   }
   .card {
-    flex-basis: 30%;
+    flex: 1 1 300px;
+    max-width: 380px;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
