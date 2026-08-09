@@ -11,18 +11,16 @@ const Introduction = () => {
         <h3 className="intro-description">I build things for the web.</h3>
       </div>
       <p className="intro-p">
-        A Front-End Developer, I Enjoy Developing New Things For The Web.
-        {/* Welcome to my portfolio! As a web developer, I understand the importance of having a strong online presence. This portfolio showcases some of my best work and highlights my skills and experience in web development. */}
+        Front-End Developer building responsive and user-friendly web applications.
       </p>
       <div className="intro-icons-parent">
-      <a
+        <a
           href="https://www.linkedin.com/in/mohamed-zakaria-b75750275/"
           target="_blank"
           rel="noreferrer"
         >
-        <FiLinkedin className="intro-icon" />
+          <FiLinkedin className="intro-icon" />
         </a>
-        {/* <ImCodepen className="intro-icon" /> */}
         <a
           href="https://github.com/Mohamed-zakaria-coder"
           target="_blank"
