@@ -26,7 +26,7 @@ const Aside = () => {
         {/* <ImCodepen className="icon" /> */}
       </div>
       <div className="right-sec">
-        <a href="#">www.Mz.com</a>
+        <a href="#">  Mz.dev</a>
       </div>
     </div>
   );
