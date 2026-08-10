@@ -19,8 +19,7 @@ const OtherProjects = () => {
             <div className="card-content">
               <h3>Typing Speed</h3>
               <p>
-                A typing game built to help users improve their typing speed and accuracy
-              </p>
+                A typing game designed to help users improve their typing speed and accuracy.              </p>
             </div>
             <div className="icons">
               <a
@@ -52,8 +51,7 @@ const OtherProjects = () => {
             <div className="card-content">
               <h3>Quiz App</h3>
               <p>
-                A Quiz Application For Testing Your Knowledge And It Give You
-                The Final Score
+                A quiz application that lets users test their knowledge and receive a final score.
               </p>
             </div>
             <div className="icons">
