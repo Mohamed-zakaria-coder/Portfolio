@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { MdGppGood } from "react-icons/md";
 import "../../styles/home/contact.css";
 export default function Contact() {
+
+  const [sendError, setSendError] = useState(false);
   let form = useRef();
   function sendEmail(e) {
     e.preventDefault();
@@ -18,21 +20,25 @@ export default function Contact() {
         (result) => {
           if (result.text === "OK") {
             console.log("Its Working");
+            setSendError(false);
 
             document.querySelector(".successfully-sent").style.display =
               "block";
+
             setTimeout(function () {
               return (document.querySelector(
                 ".successfully-sent"
               ).style.display = "none");
             }, 5000);
+            e.target.reset();
           }
         },
         (error) => {
           console.log(error.text);
+          setSendError(true);
+
         }
       );
-    e.target.reset();
   }
   return (
     <div className="contact-parent" id="contact">
@@ -67,6 +73,11 @@ export default function Contact() {
       <div className="successfully-sent">
         Your Message Has Been Sent <MdGppGood className="correct" />
       </div>
+      {sendError && (
+        <div className="send-error">
+          Something went wrong. Please try again.
+        </div>
+      )}
     </div>
   );
 }
