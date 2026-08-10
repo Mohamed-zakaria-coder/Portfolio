@@ -87,11 +87,11 @@ const Navbar = () => {
             <a href="#work">
               <li>Projects </li>
             </a>
-            <a href="#contact">
-              <li>Contact</li>
-            </a>
             <a href="#other-projects">
               <li>Other Projects</li>
+            </a>
+            <a href="#contact">
+              <li>Contact</li>
             </a>
           </ol>
           <a

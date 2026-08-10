@@ -9,7 +9,7 @@
     padding: 30px 0;
 }
 .other-parent h2::before {
-    content: "04.";
+    content: "03.";
     color: #5ef0cf;
     margin-right: 8px;
     }
