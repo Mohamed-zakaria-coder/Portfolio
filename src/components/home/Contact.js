@@ -37,6 +37,9 @@ export default function Contact() {
           console.log(error.text);
           setSendError(true);
 
+          setTimeout(() => {
+            setSendError(false);
+          }, 5000);
         }
       );
   }
