@@ -4,6 +4,7 @@ import { SiNetlify, SiVercel } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 import coffeeImage from "../../Images/main-image.png";
 import adsMaster from "../../Images/ads-master.png";
+import cashierImage from "../../Images/cashier.png";
 import { FaStar } from "react-icons/fa";
 
 import "../../styles/home/work.css";
@@ -98,41 +99,45 @@ const Work = () => {
         <div className="card" data-aos="fade-up">
           <div className="head-body-parent">
             <div className="img-parent">
-              <img
-                src="https://images.pexels.com/photos/7319129/pexels-photo-7319129.jpeg?auto=compress&cs=tinysrgb&w=400"
-                alt="product-img"
-              />
+              <img src={cashierImage} alt="cashier-vite" />
             </div>
+
             <div className="icons">
               <a
-                href="https://github.com/Mohamed-zakaria-coder/landing-page"
+                href="https://github.com/Mohamed-zakaria-coder/cashier-vite"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="View Cashier source code on GitHub"
               >
                 <AiFillGithub className="github" />
               </a>
+
               <a
-                href="https://mohamed-zakaria-coder.github.io/landing-page/"
+                href="https://mohamed-zakaria-coder.github.io/cashier-vite/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Open Cashier live demo"
               >
                 <BiLinkExternal className="folder-icon" />
               </a>
             </div>
-            <h3 className="content-heading">Landing-Page</h3>
+
+            <h3 className="content-heading">Cashier POS</h3>
+
             <div className="content-parent">
               <p className="content-p">
-                A Store For Selling the Best Hair Products For The Health Of
-                Your Hair And It Provides Natural Products
+                A responsive point-of-sale application for managing products,
+                orders, sales, and business statistics through an interactive
+                dashboard.
               </p>
             </div>
           </div>
 
           <div className="techs">
             <ul>
-              <li>HTML</li>
-              <li>CSS</li>
               <li>React</li>
+              <li>Vite</li>
+              <li>CSS</li>
             </ul>
           </div>
         </div>
