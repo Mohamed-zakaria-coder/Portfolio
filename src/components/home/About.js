@@ -28,12 +28,12 @@ const About = () => {
           <li data-aos="fade-left">CSS</li>
           <li data-aos="fade-right">JavaScript (ES6+)</li>
           <li data-aos="fade-left">React</li>
-          <li data-aos="fade-right">Bootstrap</li>
-          <li data-aos="fade-left">Git</li>
-          <li data-aos="fade-right">Github</li>
-          <li data-aos="fade-left">Netlify</li>
           <li data-aos="fade-right">Next.js</li>
-          <li data-aos="fade-left">Tailwind CSS</li>
+          <li data-aos="fade-left">TypeScript</li>
+          <li data-aos="fade-right">Tailwind CSS</li>
+          <li data-aos="fade-left">Bootstrap</li>
+          <li data-aos="fade-right">Git</li>
+          <li data-aos="fade-left">GitHub</li>
         </ul>
       </div>
     </div>

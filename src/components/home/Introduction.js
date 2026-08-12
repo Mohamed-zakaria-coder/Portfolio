@@ -8,10 +8,10 @@ const Introduction = () => {
     <div className="intro-container">
       <div className="headings-parent">
         <h1 className="intro-heading">Mohamed Zakaria.</h1>
-        <h3 className="intro-description">I build things for the web.</h3>
+        <h3 className="intro-description">Frontend / MERN Stack Developer</h3>
       </div>
       <p className="intro-p">
-        Front-End Developer building responsive and user-friendly web applications.
+        I build responsive, performant web applications with React, Next.js, and modern web technologies.
       </p>
       <div className="intro-icons-parent">
         <a
