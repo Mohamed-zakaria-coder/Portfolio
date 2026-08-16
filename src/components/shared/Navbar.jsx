@@ -1,110 +1,47 @@
 import React, { useEffect, useState } from "react";
-import { BsListNested } from "react-icons/bs";
 import { TbLetterM } from "react-icons/tb";
-import { motion } from "framer-motion";
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import "../../styles/navbar.css";
+
+const links = [
+  ["About", "#about"],
+  ["Projects", "#work"],
+  ["Other projects", "#other-projects"],
+  ["Contact", "#contact"],
+];
+
 const Navbar = () => {
-  const [hState, sethState] = useState("top");
-  let ol =
-    document.querySelector(".navbar-elements ol") &&
-    document.querySelector(".navbar-elements ol");
-  let lis =
-    document.querySelectorAll(".navbar-elements ol li") &&
-    document.querySelectorAll(".navbar-elements ol li");
-  window.onresize = function () {
-    if (ol && window.innerWidth > 738) {
-      ol.style.display = "flex";
-    } else if (ol && window.innerWidth < 738) {
-      ol.style.display = "none";
-    }
-  };
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  function showLinks() {
-    if (ol && ol.style.display !== "block" && window.innerWidth < 738) {
-      return (ol.style.display = "block");
-    } else if (ol && ol.style.display !== "none" && window.innerWidth < 738) {
-      return (ol.style.display = "none");
-    }
-  }
-  if (window.innerWidth < 738) {
-    lis.forEach((li) => {
-      li.addEventListener("click", function () {
-        li.classList.add("clicked");
-        if (li.classList.contains("clicked")) {
-          return (ol.style.display = "none");
-        }
-        lis.forEach((li) => li.classList.remove("clicked"));
-      });
-    });
-  }
   useEffect(() => {
-    sethState("up"); //  => solved null ol problem
-    var lastVal = 0;
-
-    window.onscroll = function () {
-      let y = window.scrollY;
-      if (window.innerWidth < 738) {
-      }
-      if (y > lastVal) {
-        sethState("down");
-      }
-      if (y < lastVal) {
-        sethState("up");
-      }
-      if (y === 0) {
-        sethState("top");
-      }
-      if (
-        ol &&
-        window.innerWidth < 738 &&
-        ol.parentElement.parentElement.parentElement.classList.contains("down")
-      ) {
-        ol.style.display = "none";
-      }
-      lastVal = y;
-    };
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  //
 
   return (
-    <motion.div
-      className={hState === "top" ? "top" : hState === "up" ? "up" : "down"}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
+    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="navbar-content">
-        <div className="img-logo-parent">
-          <a href="/Portfolio/">
-            <TbLetterM className="m-icon" />
-          </a>
-        </div>
-        <div className="navbar-elements">
+        <a className="brand-mark" href="/Portfolio/" aria-label="Mohamed Zakaria home">
+          <TbLetterM aria-hidden="true" />
+        </a>
+        <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => setMenuOpen((open) => !open)}>
+          <span className="sr-only">{menuOpen ? "Close navigation" : "Open navigation"}</span>
+          {menuOpen ? <HiOutlineX aria-hidden="true" /> : <HiOutlineMenuAlt3 aria-hidden="true" />}
+        </button>
+        <nav id="primary-navigation" className={`navbar-elements ${menuOpen ? "is-open" : ""}`} aria-label="Primary navigation">
           <ol>
-            <a href="#about">
-              <li> About</li>
-            </a>
-            <a href="#work">
-              <li>Projects </li>
-            </a>
-            <a href="#other-projects">
-              <li>Other Projects</li>
-            </a>
-            <a href="#contact">
-              <li>Contact</li>
-            </a>
+            {links.map(([label, href], index) => (
+              <li key={href}>
+                <a href={href} onClick={() => setMenuOpen(false)}><span>{String(index + 1).padStart(2, "0")}</span>{label}</a>
+              </li>
+            ))}
           </ol>
-          <a
-            href="https://docs.google.com/document/d/1Tflv3V45Y2Qh-iBjI84gM-97kG6AkkTX7qaOmE6HlJk/edit?usp=sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button>Resume</button>
-          </a>
-          <BsListNested className="list-icon" onClick={showLinks} />
-        </div>
+          <a className="resume-link" href="https://docs.google.com/document/d/1Tflv3V45Y2Qh-iBjI84gM-97kG6AkkTX7qaOmE6HlJk/edit?usp=sharing" target="_blank" rel="noreferrer">Resume <span aria-hidden="true">↗</span></a>
+        </nav>
       </div>
-    </motion.div>
+    </header>
   );
 };
 

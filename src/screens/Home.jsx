@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/shared/Navbar";
 import Introduction from "../components/home/Introduction";
 import About from "../components/home/About";
@@ -12,34 +12,17 @@ import "../styles/home.css";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
-  // Initial loader timer
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
+    const timer = setTimeout(() => setIsLoading(false), 900);
     return () => clearTimeout(timer);
   }, []);
 
-  // Track scroll position cleanly
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.pageYOffset);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  if (isLoading) {
-    return <Loading />;
-  }
+  if (isLoading) return <Loading />;
 
   return (
     <div className="home">
-      <Navbar scrollPosition={scrollPosition} />
+      <Navbar />
       <Aside />
       <main id="main-content">
         <Introduction />
