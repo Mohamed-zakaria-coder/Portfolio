@@ -1,6 +1,25 @@
 import React from "react";
-import { TbLetterM } from "react-icons/tb";
 import "../../styles/footer.css";
+import { TbLetterM } from "react-icons/tb";
 
-const Footer = () => <footer className="footer"><a className="footer-brand" href="/Portfolio/" aria-label="Back to home"><TbLetterM aria-hidden="true" /></a><p>Designed &amp; built by <strong>Mohamed Zakaria</strong></p><p>© {new Date().getFullYear()}</p></footer>;
+const Footer = () => {
+  return (
+    <div className="footer">
+      <div className="m-logo-footer">
+        <a href="/Portfolio/">
+          <TbLetterM className="m-icon-footer" />
+        </a>
+      </div>
+
+      <div>
+        <h3>By: M.z</h3>
+      </div>
+
+      <div>
+        Copyright © {new Date().getFullYear()}
+      </div>
+    </div>
+  );
+};
+
 export default Footer;

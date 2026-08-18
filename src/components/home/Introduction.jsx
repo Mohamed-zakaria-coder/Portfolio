@@ -1,26 +1,36 @@
 import React from "react";
-import { FiArrowUpRight, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiLinkedin } from "react-icons/fi";
+import { ImCodepen } from "react-icons/im";
+import { AiFillGithub } from "react-icons/ai";
 import "../../styles/home/introduction.css";
-
-const Introduction = () => (
-  <section className="intro-container" aria-labelledby="intro-title">
-    <div className="hero-eyebrow"><span className="eyebrow-dot" /> Available for frontend opportunities</div>
-    <div className="headings-parent">
-      <p className="intro-kicker">Hello, I&apos;m</p>
-      <h1 id="intro-title" className="intro-heading">Mohamed Zakaria<span>.</span></h1>
-      <h2 className="intro-description">Frontend / MERN Stack Developer</h2>
+const Introduction = () => {
+  return (
+    <div className="intro-container">
+      <div className="headings-parent">
+        <h1 className="intro-heading">Mohamed Zakaria.</h1>
+        <h3 className="intro-description">Frontend / MERN Stack Developer</h3>
+      </div>
+      <p className="intro-p">
+        I build responsive, performant web applications with React, Next.js, and modern web technologies.
+      </p>
+      <div className="intro-icons-parent">
+        <a
+          href="https://www.linkedin.com/in/mohamed-zakaria-b75750275/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FiLinkedin className="intro-icon" />
+        </a>
+        <a
+          href="https://github.com/Mohamed-zakaria-coder"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <AiFillGithub className="intro-icon" />
+        </a>
+      </div>
     </div>
-    <p className="intro-p">I build responsive, performant web applications with React, Next.js, and modern web technologies.</p>
-    <div className="hero-actions">
-      <a className="button button-primary" href="#work">Explore my work <FiArrowUpRight aria-hidden="true" /></a>
-      <a className="button button-quiet" href="#contact">Let&apos;s talk</a>
-    </div>
-    <div className="intro-icons-parent" aria-label="Social links">
-      <a href="https://www.linkedin.com/in/mohamed-zakaria-b75750275/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FiLinkedin aria-hidden="true" /></a>
-      <a href="https://github.com/Mohamed-zakaria-coder" target="_blank" rel="noreferrer" aria-label="GitHub"><FiGithub aria-hidden="true" /></a>
-    </div>
-    <div className="hero-note"><span>01</span><span>Scroll to see selected work</span></div>
-  </section>
-);
+  );
+};
 
 export default Introduction;

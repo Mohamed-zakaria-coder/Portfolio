@@ -1,10 +1,81 @@
-.other-cards-parent { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-.other-card { display: grid; grid-template-columns: 180px 1fr; background: var(--surface); border: 1px solid var(--line); transition: transform .25s ease, border-color .25s ease; }
-.other-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-.other-card > img { width: 100%; height: 100%; min-height: 190px; object-fit: cover; filter: saturate(.55); }
-.card-content { display: flex; flex-direction: column; padding: 22px; }
-.card-content h3 { font-size: 1.2rem; margin: 10px 0; }
-.card-content > p:not(.panel-label) { color: var(--muted); font-size: .9rem; }
-.card-content .icons { margin-top: auto; padding-top: 22px; }
-@media (max-width: 800px) { .other-cards-parent { grid-template-columns: 1fr; } }
-@media (max-width: 500px) { .other-card { grid-template-columns: 120px 1fr; } .other-card > img { min-height: 170px; } }
+.other-parent{
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+.other-parent h2{
+    color: #a7b2cf;
+    text-align: center;
+    padding: 30px 0;
+}
+.other-parent h2::before {
+    content: "03.";
+    color: #5ef0cf;
+    margin-right: 8px;
+    }
+.other-parent .other-cards-parent{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.other-parent .other-cards-parent .other-card{
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.397);
+    color: white;
+    box-shadow: 0 0 2px #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media(max-width: 738px){
+    .other-parent .other-cards-parent .other-card{
+        width: 80%;
+    }
+}
+.other-parent .img-parent{
+    max-width: 100%;
+      aspect-ratio: 3 / 2;
+        overflow: hidden;
+
+}
+.other-parent .img-parent img{
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+.other-parent .img-parent img:hover{
+    filter: grayscale(0);
+
+}
+.other-parent .question .folder-icon:hover,
+.other-parent .question .github:hover{
+    color:#faa792;
+}
+.other-parent .card-content{
+    padding: 10px;
+}
+.other-parent h3{
+    text-align: center;
+    padding: 15px 0;
+    transition: 0.5s;   
+}
+.other-parent .other-cards-parent .other-card:hover h3{
+    color: #024cd7;
+}
+.other-parent p{
+    line-height: 1.2;
+    color: #777;
+    text-align: center;
+}
+.other-parent .icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10px 10px 5px;
+}
+.other-parent .question:hover .card-content h3{
+    color: #faa792;
+}
