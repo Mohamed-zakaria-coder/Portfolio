@@ -5,8 +5,8 @@
   --font-mono: 'Fira Code', monospace;
 
   /* Color Palette */
-  --bg-primary: #0a192f;
-  --bg-secondary: #112240;
+  --bg-primary: #08111f;
+  --bg-secondary: #0e1b2d;
   --text-primary: #ccd6f6;
   --text-secondary: #8892b0;
   --accent-cyan: #64ffda;
@@ -108,4 +108,26 @@ code {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-cyan);
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(100, 255, 218, .08), transparent 68%);
+  filter: blur(10px);
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 0 1.25rem;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
 }

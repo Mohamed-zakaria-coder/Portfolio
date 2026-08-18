@@ -8,6 +8,7 @@ import Contact from "../components/home/Contact";
 import Loading from "../components/home/Loading";
 import Aside from "../components/home/Aside";
 import Footer from "../components/shared/Footer";
+import CursorGlow from "../components/shared/CursorGlow";
 import "../styles/home.css";
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
 
   return (
     <div className="home">
+      <CursorGlow />
       <Navbar scrollPosition={scrollPosition} />
       <Aside />
       <main id="main-content">
