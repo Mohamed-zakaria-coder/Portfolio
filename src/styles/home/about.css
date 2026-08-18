@@ -1,87 +1,10 @@
-.about-container {
-  padding: 30px;
-  text-align: center;
-  overflow: hidden;
-  
-}
-.about-heading {
-  color: #a7b2cf;
-  counter-increment: count;
-  margin-bottom: 50px;
-  font-size: 30px;
-}
-.about-container .about-p{
-  line-height: 1.4;
-  text-align: center;
-}
-@media(max-width:767px){
-  .about-container .about-p{
-    text-align: left;
-  }
-
-}
-.about-container h3{
-  color: white;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  
-}
-.about-heading::before {
-  content: "0" counter(count) ".";
-  color: #5ef0cf;
-  margin-right: 8px;
-}
-.about-container div {
-  color: #a7b2cf;
-}
-.about-container ul {
-  display: grid;
-  grid-template-columns: repeat(autofill, minmax(300px, 1fr));
-  margin: 40px;
-}
-.about-container ul li {
-  position: relative;
-  margin-top: 10px;
-  list-style: none;
-  padding: 12px;
-
-}
-@media only screen and (max-width: 600px){
-
-}
-.about-container ul li::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  border-radius: 50%;
-  left: 0;
-  top: 50%;
-  margin-top: -2.5px;
-  background-color: #5ef0cf;
-}
-@media only screen and (min-width: 738px) {
-  .about-container ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 150px;
-    margin: 20px;
-  }
-  .about-container {
-    padding: 40px 80px;
-  }
-  .about-container ul li {
-    color: #a7b2cf;
-  }
-  .about-container ul {
-    color: #a7b2cf;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 10px;
-  }
-  .about-container div {
-  
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-}
+.about-container { padding:5rem 0; }
+.about-container .about-heading { margin:0 0 2rem; }
+.about-container .about-p { max-width:720px; margin:0; color:var(--text-secondary); font-size:1.05rem; line-height:1.8; }
+.about-container h3 { margin:3rem 0 1.25rem; color:var(--text-primary); font-size:1.1rem; font-family:var(--font-mono); }
+.about-container .list-parent { border-top:1px solid var(--line); }
+.about-container ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; padding:0; margin:0; list-style:none; }
+.about-container li { padding:1rem 0; border-bottom:1px solid var(--line); color:var(--text-secondary); font-family:var(--font-mono); font-size:.85rem; transition:color .25s,padding-left .25s; }
+.about-container li:hover { padding-left:.6rem; color:var(--accent); }
+.about-container li::before { content:"↳"; margin-right:.65rem; color:var(--accent); }
+@media(max-width:600px){.about-container{padding:4rem 0}.about-container ul{grid-template-columns:1fr}}

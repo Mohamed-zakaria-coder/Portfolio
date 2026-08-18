@@ -1,111 +1,49 @@
 import React, { useEffect, useState } from "react";
 import { BsListNested } from "react-icons/bs";
 import { TbLetterM } from "react-icons/tb";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import "../../styles/navbar.css";
-const Navbar = () => {
-  const [hState, sethState] = useState("top");
-  let ol =
-    document.querySelector(".navbar-elements ol") &&
-    document.querySelector(".navbar-elements ol");
-  let lis =
-    document.querySelectorAll(".navbar-elements ol li") &&
-    document.querySelectorAll(".navbar-elements ol li");
-  window.onresize = function () {
-    if (ol && window.innerWidth > 738) {
-      ol.style.display = "flex";
-    } else if (ol && window.innerWidth < 738) {
-      ol.style.display = "none";
-    }
-  };
 
-  function showLinks() {
-    if (ol && ol.style.display !== "block" && window.innerWidth < 738) {
-      return (ol.style.display = "block");
-    } else if (ol && ol.style.display !== "none" && window.innerWidth < 738) {
-      return (ol.style.display = "none");
-    }
-  }
-  if (window.innerWidth < 738) {
-    lis.forEach((li) => {
-      li.addEventListener("click", function () {
-        li.classList.add("clicked");
-        if (li.classList.contains("clicked")) {
-          return (ol.style.display = "none");
-        }
-        lis.forEach((li) => li.classList.remove("clicked"));
-      });
-    });
-  }
+const links = [
+  ["About", "#about"],
+  ["Projects", "#work"],
+  ["Other Projects", "#other-projects"],
+  ["Contact", "#contact"],
+];
+
+export default function Navbar({ scrollPosition = 0 }) {
+  const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [active, setActive] = useState("#about");
+
   useEffect(() => {
-    sethState("up"); //  => solved null ol problem
-    var lastVal = 0;
+    const onScroll = () => setHidden(window.scrollY > scrollPosition && window.scrollY > 96);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollPosition]);
 
-    window.onscroll = function () {
-      let y = window.scrollY;
-      if (window.innerWidth < 738) {
-      }
-      if (y > lastVal) {
-        sethState("down");
-      }
-      if (y < lastVal) {
-        sethState("up");
-      }
-      if (y === 0) {
-        sethState("top");
-      }
-      if (
-        ol &&
-        window.innerWidth < 738 &&
-        ol.parentElement.parentElement.parentElement.classList.contains("down")
-      ) {
-        ol.style.display = "none";
-      }
-      lastVal = y;
-    };
+  useEffect(() => {
+    const sections = links.map(([, id]) => document.querySelector(id)).filter(Boolean);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.find((entry) => entry.isIntersecting);
+      if (visible) setActive(`#${visible.target.id}`);
+    }, { rootMargin: "-25% 0px -60%" });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
-  //
 
   return (
-    <motion.div
-      className={hState === "top" ? "top" : hState === "up" ? "up" : "down"}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
+    <motion.header className={`site-nav ${hidden ? "is-hidden" : ""}`} initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.65 }}>
       <div className="navbar-content">
-        <div className="img-logo-parent">
-          <a href="/Portfolio/">
-            <TbLetterM className="m-icon" />
-          </a>
-        </div>
-        <div className="navbar-elements">
+        <a className="brand-mark" href="/Portfolio/" aria-label="Mohamed Zakaria home"><TbLetterM className="m-icon" /></a>
+        <button className="menu-toggle" type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen((value) => !value)}><BsListNested /></button>
+        <nav className={`navbar-elements ${open ? "is-open" : ""}`} aria-label="Primary navigation">
           <ol>
-            <a href="#about">
-              <li> About</li>
-            </a>
-            <a href="#work">
-              <li>Projects </li>
-            </a>
-            <a href="#other-projects">
-              <li>Other Projects</li>
-            </a>
-            <a href="#contact">
-              <li>Contact</li>
-            </a>
+            {links.map(([label, href], index) => <li key={href}><a className={active === href ? "active" : ""} href={href} onClick={() => setOpen(false)}><span>0{index + 1}.</span>{label}</a></li>)}
           </ol>
-          <a
-            href="https://docs.google.com/document/d/1Tflv3V45Y2Qh-iBjI84gM-97kG6AkkTX7qaOmE6HlJk/edit?usp=sharing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button>Resume</button>
-          </a>
-          <BsListNested className="list-icon" onClick={showLinks} />
-        </div>
+          <a className="resume-button" href="https://docs.google.com/document/d/1Tflv3V45Y2Qh-iBjI84gM-97kG6AkkTX7qaOmE6HlJk/edit?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
+        </nav>
       </div>
-    </motion.div>
+    </motion.header>
   );
-};
-
-export default Navbar;
+}

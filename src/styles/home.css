@@ -1,111 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-:root {
-  /* Set Fira Code as your main global font */
-  --font-mono: 'Fira Code', monospace;
-
-  /* Color Palette */
-  --bg-primary: #0a192f;
-  --bg-secondary: #112240;
-  --text-primary: #ccd6f6;
-  --text-secondary: #8892b0;
-  --accent-cyan: #64ffda;
-  --accent-cyan-tint: rgba(100, 255, 218, 0.1);
-
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* Apply Fira Code globally to the whole page */
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-mono) !important;
-  /* Force Fira Code everywhere */
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Ensure headings, links, inputs, and buttons also use Fira Code */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-button,
-span,
-li,
-input {
-  font-family: var(--font-mono) !important;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.25s ease-in-out;
-}
-
-a:hover {
-  color: var(--accent-cyan);
-}
-
-/* 5. Monospace Typography Utility Classes */
-/* Use these classes on any element you want in Fira Code */
-.font-mono,
-.nav-link,
-.section-number,
-.tech-tag,
-.btn-primary,
-.btn-outline,
-code {
-  font-family: var(--font-mono);
-}
-
-/* 6. Styled Buttons with Fira Code */
-.btn-outline {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--accent-cyan);
-  background-color: transparent;
-  border: 1px solid var(--accent-cyan);
-  border-radius: 4px;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-}
-
-.btn-outline:hover {
-  background-color: var(--accent-cyan-tint);
-  transform: translateY(-2px);
-}
-
-/* 7. Modern Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1e2d4a;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-cyan);
-}
+:root { --bg-primary:#08111f; --bg-secondary:#0e1b2d; --surface:rgba(17,34,57,.72); --text-primary:#e8eefb; --text-secondary:#92a2be; --accent:#64ffda; --accent-soft:rgba(100,255,218,.1); --line:rgba(154,177,211,.16); --font-body:'Space Grotesk', sans-serif; --font-mono:'Fira Code', monospace; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg-primary); color:var(--text-primary); font-family:var(--font-body); line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+body::before { content:""; position:fixed; inset:0; z-index:-2; background:linear-gradient(125deg,#08111f 0%,#0a1728 48%,#08111f 100%); }
+body::after { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.22; background-image:linear-gradient(rgba(100,255,218,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(100,255,218,.06) 1px,transparent 1px); background-size:64px 64px; mask-image:linear-gradient(to bottom,black,transparent 76%); }
+a { color:inherit; text-decoration:none; }
+.home { min-height:100vh; }
+main { max-width:1120px; margin:0 auto; padding:0 7vw; }
+section { scroll-margin-top:100px; }
+.eyebrow { color:var(--accent); font-family:var(--font-mono); font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; }
+.section-heading-row { display:flex; align-items:baseline; justify-content:space-between; gap:2rem; margin-bottom:2.5rem; border-bottom:1px solid var(--line); }
+.section-heading-row h2, .about-heading, .contact-parent h2 { margin:0; font-size:clamp(2rem,4vw,3.3rem); letter-spacing:-.06em; }
+.cursor-glow { position:fixed; width:360px; height:360px; border-radius:50%; pointer-events:none; z-index:-1; transform:translate(-50%,-50%); background:radial-gradient(circle,rgba(100,255,218,.08),transparent 68%); filter:blur(10px); }
+@media (max-width:700px){ main{padding:0 1.25rem}.cursor-glow{display:none}.section-heading-row{display:block}.section-heading-row .eyebrow{margin-bottom:.5rem} }
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cursor-glow{display:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

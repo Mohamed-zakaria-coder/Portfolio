@@ -1,18 +1,3 @@
-.footer{
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 3px white;
-    color: #A9C7EA;
-    font-size: 14px;
-}
-.m-icon-footer{
-    font-size: 36px;
-  margin: 10px;
-  color: transparent;
-  color: #5ef0cf;
-  border: 8px solid #316e61;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  background-color: #142239;
-}
+.footer { max-width:1120px; margin:0 auto; padding:1.5rem 7vw 2rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; border-top:1px solid var(--line); color:var(--text-secondary); font:400 .72rem var(--font-mono); }
+.m-icon-footer { width:1.7rem; height:1.7rem; color:var(--accent); }
+@media(max-width:600px){.footer{padding:1.3rem 1.25rem; font-size:.62rem}}
