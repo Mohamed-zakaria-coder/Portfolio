@@ -15,10 +15,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  // Test Responsivity also
-  //  check more components and check why cursor glow does not disappear on small screens 
-
-
   // Initial loader timer
   useEffect(() => {
     const timer = setTimeout(() => {
