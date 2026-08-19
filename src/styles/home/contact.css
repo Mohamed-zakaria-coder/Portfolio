@@ -8,12 +8,13 @@
     color: #ccd6f6;
     font-size: 30px;
 }
+
 .contact-parent h2::before {
     color: #5ef0cf;
     content: "04.";
     color: #5ef0cf;
     margin-right: 8px;
-    }
+}
 
 .contact-parent form {
     display: flex;
@@ -40,7 +41,7 @@
     color: #ccd6f6;
 }
 
-.contact-parent form textarea{
+.contact-parent form textarea {
     background-color: rgba(0, 0, 0, 0.493);
     caret-color: white;
     outline: none;
@@ -48,8 +49,9 @@
     padding: 20px;
     border: none;
     resize: none;
-    color:white;
+    color: white;
 }
+
 .contact-parent form input[type="submit"] {
     width: 70%;
     padding: 10px;
@@ -59,23 +61,35 @@
     color: #ccd6f6;
     cursor: pointer;
 }
-.contact-parent .successfully-sent{
+
+.contact-parent .successfully-sent {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    background-color:white;
+    transform: translate(-50%, -50%);
+    background-color: white;
     padding: 20px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    display:none
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none
 }
-.contact-parent .successfully-sent .correct{
-    color:green;
+
+.contact-parent .successfully-sent .correct {
+    color: green;
     margin-left: 5px;
-    font-size:18px;
+    font-size: 18px;
 }
-.contact-parent .send-error{
-    margin-top: 10px; 
+
+.contact-parent .send-error {
+    margin-top: 10px;
+}
+
+@media (max-width:768px){
+    .contact-parent form input[type="text"],
+.contact-parent form input[type="email"],
+.contact-parent form textarea,
+.contact-parent form input[type="submit"] {
+    width: 90% !important;
+}
 }

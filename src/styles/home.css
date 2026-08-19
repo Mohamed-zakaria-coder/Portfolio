@@ -122,12 +122,12 @@ code {
   filter: blur(10px);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   main {
     padding: 0 1.25rem;
   }
 
   .cursor-glow {
-    display: none;
+    display: none !important;
   }
 }

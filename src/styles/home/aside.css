@@ -29,7 +29,7 @@
   justify-content: center;
   padding: 10px;
 }
-@media only screen and (min-width: 738px) {
+@media only screen and (min-width: 768px) {
   .aside-container {
     position: fixed;
     top: calc(50%);

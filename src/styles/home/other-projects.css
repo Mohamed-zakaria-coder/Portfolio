@@ -21,6 +21,7 @@
 }
 .other-parent .other-cards-parent .other-card{
     width: 40%;
+    max-width: 480px;
     background-color: rgba(0, 0, 0, 0.397);
     color: white;
     box-shadow: 0 0 2px #ddd;
@@ -28,9 +29,13 @@
     flex-direction: column;
     justify-content: space-between;
 }
-@media(max-width: 738px){
+@media(max-width: 768px){
+    .other-parent .other-cards-parent{
+        padding: 0 15px;
+    }
     .other-parent .other-cards-parent .other-card{
-        width: 80%;
+        width: 100%;
+        max-width: 100%;
     }
 }
 .other-parent .img-parent{
