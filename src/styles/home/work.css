@@ -72,25 +72,42 @@
   font-size: 30px;
 }
 .card {
-  box-shadow: 0 0px 3px white;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
   background-color: rgba(0, 0, 0, 0.397);
-  animation-name: move-up;
-  transition: 0.6s;
   position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  will-change: transform;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.8s ease,
+              box-shadow 0.8s ease,
+              background-color 0.8s ease !important;
+  transition-property: transform, border-color, box-shadow, background-color !important;
 }
+
+/* Ensure child elements like h3 and icons transition smoothly */
+.card h3,
+.card .content-heading {
+  transition: color 0.8s ease;
+}
+
 .card:hover {
-  transform: translateY(-10px);
-  list-style: none;
-  outline: none;
+  transform: translateY(-8px);
+  border-color: rgba(100, 255, 218, 0.55);
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5), 0 0 12px rgba(94, 240, 207, 0.25);
+}
+
+.card:hover .img-parent img {
+  filter: grayscale(0);
+}
+
+.card:hover h3 {
+  color: #5ef0cf;
 }
 a {
   text-decoration: none;
 }
 a:visited {
   color: #a8b2d1;
-}
-.card:hover h3 {
-  color: #5ef0cf;
 }
 .content-parent {
   padding: 6px;
