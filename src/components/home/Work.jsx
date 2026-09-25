@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { SiNetlify, SiVercel } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
-import coffeeImage from "../../Images/main-image.png";
-import adsMaster from "../../Images/ads-master.png";
-import cashierImage from "../../Images/cashier.png";
+import coffeeImage from "../../Images/main-image.webp";
+import adsMaster from "../../Images/ads-master.webp";
+import cashierImage from "../../Images/cashier.webp";
 import { FaStar } from "react-icons/fa";
 
 import "../../styles/home/work.css";

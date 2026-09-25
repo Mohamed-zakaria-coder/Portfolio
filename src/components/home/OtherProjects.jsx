@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/home/other-projects.css";
 import { AiFillGithub } from "react-icons/ai";
 import { BiLinkExternal } from "react-icons/bi";
-import keyboard from "../../Images/keyboard-7913431_1280.jpg";
+import keyboard from "../../Images/keyboard-7913431_1280.webp";
 const OtherProjects = () => {
   return (
     <div className="other-parent" id="other-projects">
